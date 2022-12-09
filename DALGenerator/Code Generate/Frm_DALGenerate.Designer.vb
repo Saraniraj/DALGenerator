@@ -34,18 +34,21 @@ Partial Class Frm_DALGenerate
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TabPageConnection = New System.Windows.Forms.TabPage()
+        Me.Cbxtablename = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.TXTServername = New System.Windows.Forms.ComboBox()
         Me.TXTUser = New System.Windows.Forms.TextBox()
-        Me.ComboboxDataBase = New System.Windows.Forms.ComboBox()
+        Me.CbxDataBase = New System.Windows.Forms.ComboBox()
         Me.lblDBHD = New System.Windows.Forms.Label()
         Me.TXTPass = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Rtbox = New System.Windows.Forms.RichTextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.cbxtype = New System.Windows.Forms.ComboBox()
+        Me.BtnGenerate = New System.Windows.Forms.Button()
         Me.TabPageDatabases.SuspendLayout()
         Me.TabPageConnection.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -105,9 +108,9 @@ Partial Class Frm_DALGenerate
         Me.ButtonRefresh.ForeColor = System.Drawing.Color.Gray
         Me.ButtonRefresh.Image = CType(resources.GetObject("ButtonRefresh.Image"), System.Drawing.Image)
         Me.ButtonRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonRefresh.Location = New System.Drawing.Point(157, 82)
+        Me.ButtonRefresh.Location = New System.Drawing.Point(716, 14)
         Me.ButtonRefresh.Name = "ButtonRefresh"
-        Me.ButtonRefresh.Size = New System.Drawing.Size(210, 29)
+        Me.ButtonRefresh.Size = New System.Drawing.Size(102, 29)
         Me.ButtonRefresh.TabIndex = 4
         Me.ButtonRefresh.Text = "Refresh"
         Me.ButtonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -122,10 +125,10 @@ Partial Class Frm_DALGenerate
         Me.TabPageDatabases.Controls.Add(Me.ButtonBackup)
         Me.TabPageDatabases.Controls.Add(Me.ButtonRestor)
         Me.TabPageDatabases.Controls.Add(Me.ButtonDrop)
-        Me.TabPageDatabases.Location = New System.Drawing.Point(4, 25)
+        Me.TabPageDatabases.Location = New System.Drawing.Point(4, 22)
         Me.TabPageDatabases.Name = "TabPageDatabases"
-        Me.TabPageDatabases.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.TabPageDatabases.Size = New System.Drawing.Size(874, 379)
+        Me.TabPageDatabases.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPageDatabases.Size = New System.Drawing.Size(874, 122)
         Me.TabPageDatabases.TabIndex = 2
         Me.TabPageDatabases.Text = "Databases"
         Me.TabPageDatabases.UseVisualStyleBackColor = True
@@ -160,12 +163,15 @@ Partial Class Frm_DALGenerate
         'TabPageConnection
         '
         Me.TabPageConnection.BackColor = System.Drawing.Color.Cornsilk
-        Me.TabPageConnection.Controls.Add(Me.ComboBox1)
+        Me.TabPageConnection.Controls.Add(Me.BtnGenerate)
+        Me.TabPageConnection.Controls.Add(Me.Label5)
+        Me.TabPageConnection.Controls.Add(Me.cbxtype)
+        Me.TabPageConnection.Controls.Add(Me.Cbxtablename)
         Me.TabPageConnection.Controls.Add(Me.Label2)
         Me.TabPageConnection.Controls.Add(Me.TXTServername)
         Me.TabPageConnection.Controls.Add(Me.ButtonRefresh)
         Me.TabPageConnection.Controls.Add(Me.TXTUser)
-        Me.TabPageConnection.Controls.Add(Me.ComboboxDataBase)
+        Me.TabPageConnection.Controls.Add(Me.CbxDataBase)
         Me.TabPageConnection.Controls.Add(Me.lblDBHD)
         Me.TabPageConnection.Controls.Add(Me.TXTPass)
         Me.TabPageConnection.Controls.Add(Me.Label4)
@@ -173,10 +179,33 @@ Partial Class Frm_DALGenerate
         Me.TabPageConnection.Controls.Add(Me.Label1)
         Me.TabPageConnection.Location = New System.Drawing.Point(4, 25)
         Me.TabPageConnection.Name = "TabPageConnection"
-        Me.TabPageConnection.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPageConnection.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPageConnection.Size = New System.Drawing.Size(874, 119)
         Me.TabPageConnection.TabIndex = 0
         Me.TabPageConnection.Text = "Connection"
+        '
+        'Cbxtablename
+        '
+        Me.Cbxtablename.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.Cbxtablename.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.Cbxtablename.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cbxtablename.Font = New System.Drawing.Font("Consolas", 12.0!)
+        Me.Cbxtablename.FormattingEnabled = True
+        Me.Cbxtablename.Location = New System.Drawing.Point(410, 48)
+        Me.Cbxtablename.Name = "Cbxtablename"
+        Me.Cbxtablename.Size = New System.Drawing.Size(300, 27)
+        Me.Cbxtablename.TabIndex = 16
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.ForeColor = System.Drawing.Color.CornflowerBlue
+        Me.Label2.Location = New System.Drawing.Point(332, 56)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 19)
+        Me.Label2.TabIndex = 17
+        Me.Label2.Text = "Table :"
         '
         'TXTServername
         '
@@ -185,37 +214,39 @@ Partial Class Frm_DALGenerate
         Me.TXTServername.Font = New System.Drawing.Font("Consolas", 12.0!)
         Me.TXTServername.ForeColor = System.Drawing.Color.Red
         Me.TXTServername.FormattingEnabled = True
+        Me.TXTServername.Items.AddRange(New Object() {"172.16.11.3", "172.16.11.5", "RAJKUMAR\SQLSERVER"})
         Me.TXTServername.Location = New System.Drawing.Point(157, 16)
         Me.TXTServername.Name = "TXTServername"
-        Me.TXTServername.Size = New System.Drawing.Size(210, 27)
+        Me.TXTServername.Size = New System.Drawing.Size(156, 27)
         Me.TXTServername.TabIndex = 0
         '
         'TXTUser
         '
         Me.TXTUser.Font = New System.Drawing.Font("Consolas", 12.0!)
-        Me.TXTUser.Location = New System.Drawing.Point(447, 16)
+        Me.TXTUser.Location = New System.Drawing.Point(410, 17)
         Me.TXTUser.Name = "TXTUser"
-        Me.TXTUser.Size = New System.Drawing.Size(125, 26)
+        Me.TXTUser.Size = New System.Drawing.Size(79, 26)
         Me.TXTUser.TabIndex = 1
+        Me.TXTUser.Text = "sa"
         '
-        'ComboboxDataBase
+        'CbxDataBase
         '
-        Me.ComboboxDataBase.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.ComboboxDataBase.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.ComboboxDataBase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboboxDataBase.Font = New System.Drawing.Font("Consolas", 12.0!)
-        Me.ComboboxDataBase.FormattingEnabled = True
-        Me.ComboboxDataBase.Location = New System.Drawing.Point(157, 49)
-        Me.ComboboxDataBase.Name = "ComboboxDataBase"
-        Me.ComboboxDataBase.Size = New System.Drawing.Size(210, 27)
-        Me.ComboboxDataBase.TabIndex = 3
+        Me.CbxDataBase.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CbxDataBase.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CbxDataBase.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CbxDataBase.Font = New System.Drawing.Font("Consolas", 12.0!)
+        Me.CbxDataBase.FormattingEnabled = True
+        Me.CbxDataBase.Location = New System.Drawing.Point(157, 48)
+        Me.CbxDataBase.Name = "CbxDataBase"
+        Me.CbxDataBase.Size = New System.Drawing.Size(156, 27)
+        Me.CbxDataBase.TabIndex = 3
         '
         'lblDBHD
         '
         Me.lblDBHD.AutoSize = True
         Me.lblDBHD.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold)
         Me.lblDBHD.ForeColor = System.Drawing.Color.CornflowerBlue
-        Me.lblDBHD.Location = New System.Drawing.Point(6, 52)
+        Me.lblDBHD.Location = New System.Drawing.Point(6, 56)
         Me.lblDBHD.Name = "lblDBHD"
         Me.lblDBHD.Size = New System.Drawing.Size(99, 19)
         Me.lblDBHD.TabIndex = 15
@@ -224,10 +255,11 @@ Partial Class Frm_DALGenerate
         'TXTPass
         '
         Me.TXTPass.Font = New System.Drawing.Font("Consolas", 12.0!)
-        Me.TXTPass.Location = New System.Drawing.Point(674, 16)
+        Me.TXTPass.Location = New System.Drawing.Point(601, 17)
         Me.TXTPass.Name = "TXTPass"
-        Me.TXTPass.Size = New System.Drawing.Size(175, 26)
+        Me.TXTPass.Size = New System.Drawing.Size(109, 26)
         Me.TXTPass.TabIndex = 2
+        Me.TXTPass.Text = "Lss@321"
         Me.TXTPass.UseSystemPasswordChar = True
         '
         'Label4
@@ -235,7 +267,7 @@ Partial Class Frm_DALGenerate
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label4.ForeColor = System.Drawing.Color.CornflowerBlue
-        Me.Label4.Location = New System.Drawing.Point(578, 16)
+        Me.Label4.Location = New System.Drawing.Point(505, 24)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(90, 19)
         Me.Label4.TabIndex = 13
@@ -246,7 +278,7 @@ Partial Class Frm_DALGenerate
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label3.ForeColor = System.Drawing.Color.CornflowerBlue
-        Me.Label3.Location = New System.Drawing.Point(378, 16)
+        Me.Label3.Location = New System.Drawing.Point(332, 24)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 19)
         Me.Label3.TabIndex = 11
@@ -257,7 +289,7 @@ Partial Class Frm_DALGenerate
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.CornflowerBlue
-        Me.Label1.Location = New System.Drawing.Point(3, 16)
+        Me.Label1.Location = New System.Drawing.Point(3, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(144, 19)
         Me.Label1.TabIndex = 9
@@ -273,29 +305,6 @@ Partial Class Frm_DALGenerate
         Me.TabControl1.Size = New System.Drawing.Size(882, 148)
         Me.TabControl1.TabIndex = 0
         '
-        'ComboBox1
-        '
-        Me.ComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.Font = New System.Drawing.Font("Consolas", 12.0!)
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(447, 49)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(402, 27)
-        Me.ComboBox1.TabIndex = 16
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.ForeColor = System.Drawing.Color.CornflowerBlue
-        Me.Label2.Location = New System.Drawing.Point(378, 57)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 19)
-        Me.Label2.TabIndex = 17
-        Me.Label2.Text = "Table :"
-        '
         'Rtbox
         '
         Me.Rtbox.Location = New System.Drawing.Point(4, 182)
@@ -303,6 +312,35 @@ Partial Class Frm_DALGenerate
         Me.Rtbox.Size = New System.Drawing.Size(872, 536)
         Me.Rtbox.TabIndex = 2
         Me.Rtbox.Text = ""
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label5.ForeColor = System.Drawing.Color.CornflowerBlue
+        Me.Label5.Location = New System.Drawing.Point(8, 81)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(45, 19)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "Type"
+        '
+        'cbxtype
+        '
+        Me.cbxtype.FormattingEnabled = True
+        Me.cbxtype.Items.AddRange(New Object() {"Main", "Line", "Get", "Class"})
+        Me.cbxtype.Location = New System.Drawing.Point(157, 81)
+        Me.cbxtype.Name = "cbxtype"
+        Me.cbxtype.Size = New System.Drawing.Size(156, 24)
+        Me.cbxtype.TabIndex = 18
+        '
+        'BtnGenerate
+        '
+        Me.BtnGenerate.Location = New System.Drawing.Point(410, 80)
+        Me.BtnGenerate.Name = "BtnGenerate"
+        Me.BtnGenerate.Size = New System.Drawing.Size(75, 23)
+        Me.BtnGenerate.TabIndex = 20
+        Me.BtnGenerate.Text = "Generate"
+        Me.BtnGenerate.UseVisualStyleBackColor = True
         '
         'Frm_DALGenerate
         '
@@ -340,7 +378,7 @@ Partial Class Frm_DALGenerate
     Friend WithEvents TXTServername As System.Windows.Forms.ComboBox
     Friend WithEvents ButtonRefresh As System.Windows.Forms.Button
     Friend WithEvents TXTUser As System.Windows.Forms.TextBox
-    Friend WithEvents ComboboxDataBase As System.Windows.Forms.ComboBox
+    Friend WithEvents CbxDataBase As System.Windows.Forms.ComboBox
     Friend WithEvents lblDBHD As System.Windows.Forms.Label
     Friend WithEvents TXTPass As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
@@ -348,6 +386,9 @@ Partial Class Frm_DALGenerate
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Cbxtablename As System.Windows.Forms.ComboBox
     Friend WithEvents Rtbox As System.Windows.Forms.RichTextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents cbxtype As ComboBox
+    Friend WithEvents BtnGenerate As Button
 End Class

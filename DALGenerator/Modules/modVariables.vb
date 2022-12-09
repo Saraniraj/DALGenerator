@@ -11,10 +11,7 @@ Module modVariables
     Public mvarCompanyCode As String
     Public mvarCompanyName As String
     Public mvarUserID As String
-    Public mvarFinYearCode As String
-    Public mvarFinYearDate As String
-    Public mvarLocationCode As String
-    Public mvarLocationName As String
+
     Public mvarModuleName As String
     Public mvarServerDate As String
     Public mvarLanguageCode As String
@@ -44,18 +41,17 @@ Module modVariables
     Public mvarargument As String
     Public locindex As Integer
     Public mvarmenu As String
-    Public CmpPrefix As String
+
     Public mvarDbasename = "eGeneral"
+    Public mservername As String
+    Public mserveruname As String
+    Public mserverPassword As String
 
     Public Declare Unicode Function GetPrivateProfileString Lib "kernel32" Alias "GetPrivateProfileStringW" _
         (ByVal lpApplicationName As String, ByVal lpKeyName As String, ByVal lpDefault As String,
          ByVal lpReturnedString As String, ByVal nSize As Int32, ByVal lpFileName As String) As Int32
 
-    'Public mvarReportPath As String = "\\datasvrb\APPLICATIONS\TexOne\"
-    ''   Public mvarReportPath As String = "D:\SpinOne"
-    Public mvarReportPath As String = "\\ls-SPIN-DATA\APPLICATIONS\Spinone"
-
-    'Public mvarReportPath As String = Application.StartupPath
+    Public mvarReportPath As String = Application.StartupPath
 
 End Module
 

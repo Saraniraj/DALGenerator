@@ -1,9 +1,205 @@
-﻿Public Class FrmCodeGenerate
+﻿Imports System.Data.SqlClient
+Imports System.Net
+
+Public Class Frm_DALGenerate
+
+    Dim SERVERNAME_FIELD As String = "ServerName"
+    Dim USERNAME_FIELD As String = "Username"
+    Dim PASSWORD_FIELD As String = "Password"
+
+    Dim DataBaseListComp As DataTable
+    Dim DataBaseListHR As DataTable
+
+    Dim ConnectionCompSelected As New ClsConnections()
+    Dim ConnectionData As New ClsConnections()
+    Dim ConnectionGenerals As New ClsConnections()
+
+    Private Sub MainFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Control.CheckForIllegalCrossThreadCalls = False
+
+        Try
+
+            '1.
+            TXTServername.Items.Add(".")
+
+            '2.
+            Dim IPHost As IPHostEntry
+            IPHost = Dns.GetHostByName(Dns.GetHostName())
+            TXTServername.Items.Add(IPHost.AddressList(0).ToString())
+
+            '3.
+            TXTServername.Items.Add(Dns.GetHostName)
+
+            '---
+
+            TXTServername.SelectedValue = 0
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        '--------
+        Dim comp = From controls In Me.TabPageDatabases.Controls.OfType(Of Button)() Select controls
+
+        For Each Btn In comp
+            AddHandler Btn.MouseEnter, AddressOf BtnEnter
+            AddHandler Btn.MouseLeave, AddressOf BtnLeave
+        Next
+        '--------
+
+    End Sub
+
+    Private Sub ButtonDrop_Click(sender As Object, e As EventArgs) Handles ButtonDrop.Click
+
+        'If String.IsNullOrEmpty(TXTServername.Text.Trim Is String.Empty) OrElse String.IsNullOrEmpty(TXTUser.Text.Trim) OrElse String.IsNullOrEmpty(TXTPass.Text.Trim) Then TabControl1.SelectedIndex = 0 : ToolTip1.Show("Check Connection Info ...", TXTServername, 2000) : Exit Sub
+
+        If Not ConnectionGenerals.TestConnection Then
+
+            TabControl1.SelectedIndex = 0 : ToolTip1.Show("Check Connection Info ...", TXTServername, 2000) : Exit Sub
+
+        End If
+
+        Me.Hide()
+
+        Dim F As New FrmDrop(DataBaseListComp, ConnectionGenerals)
+        F.ShowDialog()
+
+        Me.Show()
+
+    End Sub
+
+    Private Sub TXTPass_KeyDown(sender As Object, e As KeyEventArgs) Handles TXTPass.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            GET_DB()
+        End If
+    End Sub
+
+    Private Sub TXTPass_Leave(sender As Object, e As EventArgs) Handles TXTPass.Leave
+
+        Dim TH As New Threading.Thread(AddressOf GET_DB)
+        TH.Start()
+
+    End Sub
+
+    Sub GET_DB()
+
+        Me.Cursor = Cursors.WaitCursor
+
+        Try
+
+            CbxDataBase.DataSource = Nothing
+
+            ConnectionGenerals = New ClsConnections(TXTServername.Text.Trim, TXTUser.Text.Trim, TXTPass.Text.Trim)
+
+            DataBaseListComp = ConnectionGenerals.Query("SELECT [name] FROM sys.databases Where [name] Not In('master','model','msdb','tempdb','ReportServer','ReportServerTempDB')")
+
+            CbxDataBase.DataSource = DataBaseListComp
+            CbxDataBase.DisplayMember = "name"
+            CbxDataBase.ValueMember = "name"
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        Me.Cursor = Cursors.Default
+
+    End Sub
+    Sub GET_TableName()
+
+        Me.Cursor = Cursors.WaitCursor
+
+        Try
+
+            Cbxtablename.DataSource = Nothing
+
+            ConnectionGenerals = New ClsConnections(TXTServername.Text.Trim, TXTUser.Text.Trim, TXTPass.Text.Trim, CbxDataBase.Text.Trim)
+
+            DataBaseListComp = ConnectionGenerals.Query("SELECT table_name FROM information_schema.tables WHERE table_type = 'BASE TABLE' ORDER BY table_name ASC ")
+
+            Cbxtablename.DataSource = DataBaseListComp
+            Cbxtablename.DisplayMember = "table_name"
+            Cbxtablename.ValueMember = "table_name"
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        Me.Cursor = Cursors.Default
+
+    End Sub
+    Private Sub ButtonBackup_Click(sender As Object, e As EventArgs) Handles ButtonBackup.Click
+
+        'If String.IsNullOrEmpty(TXTServername.Text.Trim Is String.Empty) OrElse String.IsNullOrEmpty(TXTUser.Text.Trim) OrElse String.IsNullOrEmpty(TXTPass.Text.Trim) Then TabControl1.SelectedIndex = 0 : ToolTip1.Show("Check Connection Info ...", TXTServername, 2000) : Exit Sub
+
+        If Not ConnectionGenerals.TestConnection Then
+
+            TabControl1.SelectedIndex = 0 : ToolTip1.Show("Check Connection Info ...", TXTServername, 2000) : Exit Sub
+
+        End If
+
+        Me.Hide()
+
+        Dim F As New FrmBackup(DataBaseListComp, ConnectionGenerals)
+        F.ShowDialog()
+
+        Me.Show()
+
+    End Sub
+
+    Private Sub BtnEnter(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+        sender.FlatStyle = FlatStyle.Standard
+
+    End Sub
+
+    Private Sub BtnLeave(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+        sender.FlatStyle = FlatStyle.Flat
+
+    End Sub
+
+    Private Sub ButtonRestor_Click(sender As Object, e As EventArgs) Handles ButtonRestor.Click
+
+        'If String.IsNullOrEmpty(TXTServername.Text.Trim Is String.Empty) OrElse String.IsNullOrEmpty(TXTUser.Text.Trim) OrElse String.IsNullOrEmpty(TXTPass.Text.Trim) Then TabControl1.SelectedIndex = 0 : ToolTip1.Show("Check Connection Info ...", TXTServername, 2000) : Exit Sub
+
+        If Not ConnectionGenerals.TestConnection Then
+
+            TabControl1.SelectedIndex = 0 : ToolTip1.Show("Check Connection Info ...", TXTServername, 2000) : Exit Sub
+
+        End If
+
+        Me.Hide()
+
+        Dim F As New FrmRestor(ConnectionGenerals)
+        F.ShowDialog()
+
+        Me.Show()
+
+    End Sub
+
+    Private Sub ButtonRefresh_Click(sender As Object, e As EventArgs) Handles ButtonRefresh.Click
+
+        Dim TH As New Threading.Thread(AddressOf GET_DB)
+        TH.Start()
+
+    End Sub
+
+    Private Sub ComboboxDataBase_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub CbxDataBase_Leave(sender As Object, e As EventArgs) Handles CbxDataBase.Leave
+        Dim TH As New Threading.Thread(AddressOf GET_TableName)
+        TH.Start()
+    End Sub
 
     Private Sub BtnGenerate_Click(sender As Object, e As EventArgs) Handles BtnGenerate.Click
         Try
             If IsBlankComboBox(cbxtype) Then Exit Sub
-            If IsBlankTextBox(TxtTablename) Then Exit Sub
+            If IsBlankComboBox(Cbxtablename) Then Exit Sub
+
+            mvarDbasename = CbxDataBase.Text
             If cbxtype.Text = "Main" Then
                 Create_SQLMainScript()
             ElseIf cbxtype.Text = "Line" Then
@@ -22,79 +218,10 @@
             End If
 
 1:
-
-            'For irow = 0 To ds.Tables(0).Rows.Count - 1
-
-            '    Dim slno = irow + 1
-            '    '    Dim empcode = ds.Tables(0).Rows(irow)("empcode")
-
-            '    Dtable.Rows.Add()
-            '    Dtable.Rows(irows)("SNO") = slno
-            '    Dtable.Rows(irows)("EmpCode") = mReport
-            '    'Dtable.Rows(irows)("Name") = empname & vbCrLf & deptname
-
-            '    irows = irows + 1
-
-            'Next
-
-            'Dtable.Rows.Add()
-            ''     irows = irows + 1
-            'Dtable.Rows(irows)("SNO") = ""
-            'Dtable.Rows(irows)("EmpCode") = mReport
-
-            'dgvReport.DataSource = Dtable
-            'With dgvReport
-            '    .RowHeadersVisible = False
-            '    .Columns(0).HeaderCell.Value = "SNO" & vbCrLf & ""
-            '    .Columns(1).HeaderCell.Value = "Emp.Code" & vbCrLf & ""
-
-            'End With
-
         Catch ex As Exception
             Show_Message(ex.ToString())
         End Try
     End Sub
-
-    Private Sub FrmCodeGenerate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-
-        Catch ex As Exception
-
-        End Try
-    End Sub
-
-    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles Rtbox.TextChanged
-        ''SELECT 'Create Proc sp_Save' + 'GST_PartyDebitNote_Main '
-        ''+CHAR(13) + CHAR(10)+
-        '( '
-    End Sub
-
-    Private Sub Btnsave_Click(sender As Object, e As EventArgs) Handles Btnsave.Click
-        Dim saveDlg As SaveFileDialog = New SaveFileDialog()
-        Dim filename As String = ""
-        saveDlg.Filter = "Rich Text File (*.rtf)|*.rtf|Plain Text File (*.txt)|*.txt"
-        saveDlg.DefaultExt = "*.rtf"
-        saveDlg.FilterIndex = 1
-        saveDlg.Title = "Save the contents"
-        Dim retval As DialogResult = saveDlg.ShowDialog()
-
-        If retval = DialogResult.OK Then
-            filename = saveDlg.FileName
-        Else
-            Return
-        End If
-
-        Dim stream_type As RichTextBoxStreamType
-
-        If saveDlg.FilterIndex = 2 Then
-            stream_type = RichTextBoxStreamType.PlainText
-        Else
-            stream_type = RichTextBoxStreamType.RichText
-        End If
-
-        Rtbox.SaveFile(filename, stream_type)
-    End Sub
-
     Private Sub Create_SQLMainScript()
         Try
             Rtbox.Text = ""
@@ -125,17 +252,17 @@
             mReport &= "--- Description	    :   " & " (Insert / Update)" & nl
 
             mReport &= "--- =================================================================" & nl
-            mReport &= "---Grant Execute On  Sp_Save" & TxtTablename.Text & "  To Public " & nl
-            mReport &= "---Select * from " & TxtTablename.Text & " " & nl
+            mReport &= "---Grant Execute On  Sp_Save" & Cbxtablename.Text & "  To Public " & nl
+            mReport &= "---Select * from " & Cbxtablename.Text & " " & nl
             mReport &= "---=================================================================" & nl
-            mReport &= "Create Proc sp_Save" & TxtTablename.Text & nl & "(" & nl
+            mReport &= "Create Proc sp_Save" & Cbxtablename.Text & nl & "(" & nl
 
             ds = Nothing
             ds = New DataSet
             SSQL = ""
             SSQL = " SELECT  '@'+column_name    as COl_Name"
             SSQL &= "   FROM INFORMATION_SCHEMA.Columns"
-            SSQL &= " where TABLE_NAME = '" & TxtTablename.Text & "'"
+            SSQL &= " where TABLE_NAME = '" & Cbxtablename.Text & "'"
             SSQL &= " and COLUMN_NAME not in ('Authorize','Delete_Mode','Created_By', 'Created_Date','Modified_By' ,'Modified_Date') "
 
             ds = ReturnMultipleValue(SSQL, mvarDbasename)
@@ -162,7 +289,7 @@
             mReport &= " Set @iServerDate=(Select Convert(VARCHAR(19),getdate(),120))" & nl
 
             mReport &= " Set @iMode=(" & nl
-            mReport &= " 		Select Count(Entry_No) from " & TxtTablename.Text & nl
+            mReport &= " 		Select Count(Entry_No) from " & Cbxtablename.Text & nl
             mReport &= " 		Where	Comp_Code		=	@Comp_Code " & nl
             mReport &= " 		And		Location_Code	=	@Location_Code " & nl
             mReport &= " 		And		Fin_Year_Code	=	@Fin_Year_Code " & nl
@@ -174,14 +301,14 @@
             mReport &= " select @sqlstr=''" & nl
             mReport &= " IF @iMode<=0 " & nl
             mReport &= " BEGIN" & nl
-            mReport &= " select @sqlstr = 'Insert into   " & TxtTablename.Text & "   Values (   ' " & nl
+            mReport &= " select @sqlstr = 'Insert into   " & Cbxtablename.Text & "   Values (   ' " & nl
 
             ds = Nothing
             ds = New DataSet
             SSQL = ""
             SSQL = " SELECT  'select @sqlstr= @sqlstr + '',''+ '''' + ltrim(rtrim(@'+column_name +'		   ' +' ))				+ ''''' as COl_Name "
             SSQL &= "   FROM INFORMATION_SCHEMA.Columns"
-            SSQL &= " where TABLE_NAME = '" & TxtTablename.Text & "'"
+            SSQL &= " where TABLE_NAME = '" & Cbxtablename.Text & "'"
             SSQL &= " and COLUMN_NAME not in ('Authorize','Delete_Mode','Created_By', 'Created_Date','Modified_By' ,'Modified_Date') "
 
             ds = ReturnMultipleValue(SSQL, mvarDbasename)
@@ -204,7 +331,7 @@
             mReport &= " ELSE IF @iMode=1 " & nl
             mReport &= " BEGIN " & nl
 
-            mReport &= " select @sqlstr = 'Update  " & TxtTablename.Text & " Set '" & nl
+            mReport &= " select @sqlstr = 'Update  " & Cbxtablename.Text & " Set '" & nl
 
             ds = Nothing
             ds = New DataSet
@@ -215,7 +342,7 @@
             SSQL &= "  ,'@'+column_name    as Updat_Col  "
 
             SSQL &= "   FROM INFORMATION_SCHEMA.Columns"
-            SSQL &= " where TABLE_NAME = '" & TxtTablename.Text & "'"
+            SSQL &= " where TABLE_NAME = '" & Cbxtablename.Text & "'"
             SSQL &= " and COLUMN_NAME not in ('Comp_Code','Location_Code','Fin_Year_Code','Entry_No','Entry_Date','Authorize','Delete_Mode','Created_By', 'Created_Date','Modified_By' ,'Modified_Date') "
 
             ds = ReturnMultipleValue(SSQL, mvarDbasename)
@@ -245,7 +372,7 @@
 
             mReport &= " IF @iMode=1" & nl
             mReport &= "                BEGIN" & nl
-            mReport &= " select @sqlstr = 'Delete from  " & TxtTablename.Text & "'" & nl
+            mReport &= " select @sqlstr = 'Delete from  " & Cbxtablename.Text & "'" & nl
             mReport &= " select @sqlstr= @sqlstr +  ' Where Comp_Code='		+ '''' + @Comp_Code			+ ''''" & nl
             mReport &= " select @sqlstr= @sqlstr +  ' And Location_Code='	+ '''' + @Location_Code		+ ''''  " & nl
             mReport &= " select @sqlstr= @sqlstr +  ' And Fin_Year_Code='	+ '''' + @Fin_Year_Code		+ ''''  " & nl
@@ -295,20 +422,20 @@
             mReport &= "--- Created Date	:	" & DateTime.Now & nl
             mReport &= "--- Author		    :	" & mvarUserID & nl
             mReport &= "--- Modified Date	:	" & DateTime.Now & nl
-            mReport &= "--- Description	    :   " & " Save" & TxtTablename.Text & " (Insert / Update)" & nl
+            mReport &= "--- Description	    :   " & " Save" & Cbxtablename.Text & " (Insert / Update)" & nl
 
             mReport &= "--- =================================================================" & nl
-            mReport &= "---Grant Execute On  Sp_Save" & TxtTablename.Text & "  To Public " & nl
-            mReport &= "---Select * from " & TxtTablename.Text & " " & nl
+            mReport &= "---Grant Execute On  Sp_Save" & Cbxtablename.Text & "  To Public " & nl
+            mReport &= "---Select * from " & Cbxtablename.Text & " " & nl
             mReport &= "---=================================================================" & nl
-            mReport &= "Create Proc sp_Save" & TxtTablename.Text & nl & "(" & nl
+            mReport &= "Create Proc sp_Save" & Cbxtablename.Text & nl & "(" & nl
 
             ds = Nothing
             ds = New DataSet
             SSQL = ""
             SSQL = " SELECT  '@'+column_name    as COl_Name"
             SSQL &= "   FROM INFORMATION_SCHEMA.Columns"
-            SSQL &= " where TABLE_NAME = '" & TxtTablename.Text & "'"
+            SSQL &= " where TABLE_NAME = '" & Cbxtablename.Text & "'"
             SSQL &= " and COLUMN_NAME not in ('Authorize','Delete_Mode','Created_By', 'Created_Date','Modified_By' ,'Modified_Date') "
 
             ds = ReturnMultipleValue(SSQL, mvarDbasename)
@@ -338,7 +465,7 @@
 
             mReport &= " select @sqlstr=''  "
 
-            mReport &= " select @sqlstr = 'Insert into   " & TxtTablename.Text & "   Values (   ' " & nl
+            mReport &= " select @sqlstr = 'Insert into   " & Cbxtablename.Text & "   Values (   ' " & nl
 
             ds = Nothing
             ds = New DataSet
@@ -347,7 +474,7 @@
 
             SSQL = " SELECT  ' @'+column_name     as  COl_Name"
             SSQL &= "   FROM INFORMATION_SCHEMA.Columns"
-            SSQL &= " where TABLE_NAME = '" & TxtTablename.Text & "'"
+            SSQL &= " where TABLE_NAME = '" & Cbxtablename.Text & "'"
             SSQL &= " and COLUMN_NAME not in ('Authorize','Delete_Mode','Created_By', 'Created_Date','Modified_By' ,'Modified_Date') "
 
             ds = ReturnMultipleValue(SSQL, mvarDbasename)
@@ -408,12 +535,12 @@
             mReport &= "--- Created Date	:	" & DateTime.Now & nl
             mReport &= "--- Author		    :	" & mvarUserID & nl
             mReport &= "--- Modified Date	:	" & DateTime.Now & nl
-            mReport &= "--- Description	    :   " & " Get" & TxtTablename.Text & " (Insert / Update)" & nl
+            mReport &= "--- Description	    :   " & " Get" & Cbxtablename.Text & " (Insert / Update)" & nl
             mReport &= "--- =================================================================" & nl
-            mReport &= "---Grant Execute On  sp_Get" & TxtTablename.Text & "_Details     To Public " & nl
-            mReport &= "---Select * from " & TxtTablename.Text & " " & nl
+            mReport &= "---Grant Execute On  sp_Get" & Cbxtablename.Text & "_Details     To Public " & nl
+            mReport &= "---Select * from " & Cbxtablename.Text & " " & nl
             mReport &= "---=================================================================" & nl
-            mReport &= "Create Proc sp_Get" & TxtTablename.Text & "_Details" & nl & "(" & nl
+            mReport &= "Create Proc sp_Get" & Cbxtablename.Text & "_Details" & nl & "(" & nl
 
             mReport &= "@Comp_Code					Varchar(20)," & nl
             mReport &= "@Location_Code				Varchar(20)," & nl
@@ -447,7 +574,7 @@
             mReport &= "select @sqlstr = @sqlstr + '            '         " & nl
             mReport &= "select @sqlstr = @sqlstr + '            '         " & nl
 
-            mReport &= " select @sqlstr = @sqlstr + ' from " + TxtTablename.Text + "  as a '" & nl
+            mReport &= " select @sqlstr = @sqlstr + ' from " + Cbxtablename.Text + "  as a '" & nl
             mReport &= " select @sqlstr = @sqlstr + ' Where a.Comp_Code='			+ '''' + @Comp_Code			+ ''''" & nl
             mReport &= " select @sqlstr = @sqlstr + ' And a.Location_Code='			+ '''' + @Location_Code		+ ''''" & nl
             mReport &= " select @sqlstr = @sqlstr + ' And a.Fin_Year_Code='			+ '''' + @Fin_Year_Code		+ ''''" & nl
@@ -471,7 +598,7 @@
             mReport &= "select @sqlstr = @sqlstr + '            '         " & nl
             mReport &= "select @sqlstr = @sqlstr + '            '         " & nl
 
-            mReport &= " select @sqlstr = @sqlstr + ' from " + TxtTablename.Text + "  as a '" & nl
+            mReport &= " select @sqlstr = @sqlstr + ' from " + Cbxtablename.Text + "  as a '" & nl
             mReport &= " select @sqlstr = @sqlstr + ' Where a.Comp_Code='			+ '''' + @Comp_Code			+ ''''" & nl
             mReport &= " select @sqlstr = @sqlstr + ' And a.Location_Code='			+ '''' + @Location_Code		+ ''''" & nl
             mReport &= " select @sqlstr = @sqlstr + ' And a.Fin_Year_Code='			+ '''' + @Fin_Year_Code		+ ''''" & nl
@@ -495,7 +622,7 @@
             mReport &= "select @sqlstr = @sqlstr + '            '         " & nl
             mReport &= "select @sqlstr = @sqlstr + '            '         " & nl
 
-            mReport &= " select @sqlstr = @sqlstr + ' from " + TxtTablename.Text + "  as a '" & nl
+            mReport &= " select @sqlstr = @sqlstr + ' from " + Cbxtablename.Text + "  as a '" & nl
             mReport &= " select @sqlstr = @sqlstr + ' Where a.Comp_Code='			+ '''' + @Comp_Code			+ ''''" & nl
             mReport &= " select @sqlstr = @sqlstr + ' And a.Location_Code='			+ '''' + @Location_Code		+ ''''" & nl
             mReport &= " select @sqlstr = @sqlstr + ' And a.Fin_Year_Code='			+ '''' + @Fin_Year_Code		+ ''''" & nl
@@ -543,15 +670,15 @@
 
             mReport &= "#End Region" & nl
 
-            mReport &= "Public Class Cls_" & TxtTablename.Text & "_Details" & nl
-            mReport &= "Public Function Get" & TxtTablename.Text & "_Details" + "(ByVal mvarvarietyCode As String, ByVal mvarFilterData As String)" & nl
+            mReport &= "Public Class Cls_" & Cbxtablename.Text & "_Details" & nl
+            mReport &= "Public Function Get" & Cbxtablename.Text & "_Details" + "(ByVal mvarvarietyCode As String, ByVal mvarFilterData As String)" & nl
             mReport &= "Try" & nl
             mReport &= "com = New OleDbCommand" & nl
             mReport &= "ds = New DataSet" & nl
             mReport &= "da = New OleDbDataAdapter" & nl
             mReport &= "con = New OleDbConnection(GetConnection(""" + "eCotton """ + "))" & nl
             mReport &= "Try" & nl
-            mReport &= "com.CommandText = """ + "sp_Get" & TxtTablename.Text & "_Details" & nl
+            mReport &= "com.CommandText = """ + "sp_Get" & Cbxtablename.Text & "_Details" & nl
             mReport &= "com.CommandType = CommandType.StoredProcedure" & nl
             mReport &= "com.Connection = con" & nl
             mReport &= "com.Parameters.Add(""" + "@Comp_Code""" + ", OleDbType.VarChar, 10).Value = mvarCompanyCode" & nl
@@ -615,7 +742,7 @@
             SSQL = ""
             SSQL = " SELECT  'com.Parameters.Add(""" + "@'+column_name + '""" + " , OleDbType.VarChar, 200).Value =' as COl_Name "
             SSQL &= "   FROM INFORMATION_SCHEMA.Columns"
-            SSQL &= " where TABLE_NAME = '" & TxtTablename.Text & "'"
+            SSQL &= " where TABLE_NAME = '" & Cbxtablename.Text & "'"
             SSQL &= " and COLUMN_NAME not in ('Authorize','Delete_Mode','Created_By', 'Created_Date','Modified_By' ,'Modified_Date','Comp_Code','Location_Code','Fin_Year_Code','Entry_No','Entry_Date') "
 
             ds = ReturnMultipleValue(SSQL, mvarDbasename)
@@ -690,12 +817,12 @@
             mReport &= "--- Created Date	:	" & DateTime.Now & nl
             mReport &= "--- Author		    :	" & mvarUserID & nl
             mReport &= "--- Modified Date	:	" & DateTime.Now & nl
-            mReport &= "--- Description	    :   " & " Get" & TxtTablename.Text & " (Insert / Update)" & nl
+            mReport &= "--- Description	    :   " & " Get" & Cbxtablename.Text & " (Insert / Update)" & nl
             mReport &= "--- =================================================================" & nl
-            mReport &= "---Grant Execute On  sp_Get" & TxtTablename.Text & "_Details     To Public " & nl
-            mReport &= "---Select * from " & TxtTablename.Text & " " & nl
+            mReport &= "---Grant Execute On  sp_Get" & Cbxtablename.Text & "_Details     To Public " & nl
+            mReport &= "---Select * from " & Cbxtablename.Text & " " & nl
             mReport &= "---=================================================================" & nl
-            mReport &= "Create Proc sp_Get" & TxtTablename.Text & "_Details" & nl & "(" & nl
+            mReport &= "Create Proc sp_Get" & Cbxtablename.Text & "_Details" & nl & "(" & nl
 
             mReport &= "@Comp_Code					Varchar(20)," & nl
             mReport &= "@Location_Code				Varchar(20)," & nl
@@ -729,7 +856,7 @@
             mReport &= "select @sqlstr = @sqlstr + '            '         " & nl
             mReport &= "select @sqlstr = @sqlstr + '            '         " & nl
 
-            mReport &= " select @sqlstr = @sqlstr + ' from " + TxtTablename.Text + "  as a '" & nl
+            mReport &= " select @sqlstr = @sqlstr + ' from " + Cbxtablename.Text + "  as a '" & nl
             mReport &= " select @sqlstr = @sqlstr + ' Where a.Comp_Code='			+ '''' + @Comp_Code			+ ''''" & nl
             mReport &= " select @sqlstr = @sqlstr + ' And a.Location_Code='			+ '''' + @Location_Code		+ ''''" & nl
             mReport &= " select @sqlstr = @sqlstr + ' And a.Fin_Year_Code='			+ '''' + @Fin_Year_Code		+ ''''" & nl
@@ -753,7 +880,7 @@
             mReport &= "select @sqlstr = @sqlstr + '            '         " & nl
             mReport &= "select @sqlstr = @sqlstr + '            '         " & nl
 
-            mReport &= " select @sqlstr = @sqlstr + ' from " + TxtTablename.Text + "  as a '" & nl
+            mReport &= " select @sqlstr = @sqlstr + ' from " + Cbxtablename.Text + "  as a '" & nl
             mReport &= " select @sqlstr = @sqlstr + ' Where a.Comp_Code='			+ '''' + @Comp_Code			+ ''''" & nl
             mReport &= " select @sqlstr = @sqlstr + ' And a.Location_Code='			+ '''' + @Location_Code		+ ''''" & nl
             mReport &= " select @sqlstr = @sqlstr + ' And a.Fin_Year_Code='			+ '''' + @Fin_Year_Code		+ ''''" & nl
@@ -777,7 +904,7 @@
             mReport &= "select @sqlstr = @sqlstr + '            '         " & nl
             mReport &= "select @sqlstr = @sqlstr + '            '         " & nl
 
-            mReport &= " select @sqlstr = @sqlstr + ' from " + TxtTablename.Text + "  as a '" & nl
+            mReport &= " select @sqlstr = @sqlstr + ' from " + Cbxtablename.Text + "  as a '" & nl
             mReport &= " select @sqlstr = @sqlstr + ' Where a.Comp_Code='			+ '''' + @Comp_Code			+ ''''" & nl
             mReport &= " select @sqlstr = @sqlstr + ' And a.Location_Code='			+ '''' + @Location_Code		+ ''''" & nl
             mReport &= " select @sqlstr = @sqlstr + ' And a.Fin_Year_Code='			+ '''' + @Fin_Year_Code		+ ''''" & nl
@@ -798,5 +925,4 @@
 
         End Try
     End Sub
-
 End Class
