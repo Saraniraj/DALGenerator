@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6E58858E-0DBD-4525-BB69-9CA6B3151C78}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>BACKUPandRESTORE.My.MyApplication</StartupObject>
+    <RootNamespace>BACKUPandRESTORE</RootNamespace>
+    <AssemblyName>DALGenerator</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>DALGenerator.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>DALGenerator.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icons8-Windows-8-Business-Online-Support.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="ClsConnections.vb" />
+    <Compile Include="Code Generate\FrmCodeGenerate.designer.vb">
+      <DependentUpon>FrmCodeGenerate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Code Generate\FrmCodeGenerate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_DALGenerate.Designer.vb">
+      <DependentUpon>Frm_DALGenerate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_DALGenerate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRestor.Designer.vb">
+      <DependentUpon>FrmRestor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRestor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBackup.Designer.vb">
+      <DependentUpon>FrmBackup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBackup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDrop.Designer.vb">
+      <DependentUpon>FrmDrop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDrop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm.Designer.vb">
+      <DependentUpon>MainFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\FormMessageBox.Designer.vb">
+      <DependentUpon>FormMessageBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\FormMessageBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\RJMessageBox.vb" />
+    <Compile Include="Modules\modCommonFunction.vb" />
+    <Compile Include="Modules\modDBConnection.vb" />
+    <Compile Include="Modules\modFormResize.vb" />
+    <Compile Include="Modules\modVariables.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Sample\frmSample1.designer.vb">
+      <DependentUpon>frmSample1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\frmSample1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\frmSampleReport_DgvAzure.designer.vb">
+      <DependentUpon>frmSampleReport_DgvAzure.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sample\frmSampleReport_DgvAzure.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Code Generate\FrmCodeGenerate.resx">
+      <DependentUpon>FrmCodeGenerate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_DALGenerate.resx">
+      <DependentUpon>Frm_DALGenerate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRestor.resx">
+      <DependentUpon>FrmRestor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBackup.resx">
+      <DependentUpon>FrmBackup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDrop.resx">
+      <DependentUpon>FrmDrop.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagebox\FormMessageBox.resx">
+      <DependentUpon>FormMessageBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\frmSample1.resx">
+      <DependentUpon>frmSample1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample\frmSampleReport_DgvAzure.resx">
+      <DependentUpon>frmSampleReport_DgvAzure.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons8-Windows-8-Business-Online-Support.ico" />
+    <Content Include="Images\chat.png" />
+    <Content Include="Images\error.png" />
+    <Content Include="Images\exclamation.png" />
+    <Content Include="Images\information.png" />
+    <Content Include="Images\question.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

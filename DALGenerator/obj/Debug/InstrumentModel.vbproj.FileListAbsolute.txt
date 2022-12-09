@@ -1,0 +1,13 @@
+G:\ME\Learnning\3- VB.NET\Programs\Advenced Programs\Database TP\Instrument Model [SOFTWAVE]\v3\Instrument Model\bin\Debug\Instrument Model.exe.config
+G:\ME\Learnning\3- VB.NET\Programs\Advenced Programs\Database TP\Instrument Model [SOFTWAVE]\v3\Instrument Model\bin\Debug\Instrument Model.exe
+G:\ME\Learnning\3- VB.NET\Programs\Advenced Programs\Database TP\Instrument Model [SOFTWAVE]\v3\Instrument Model\bin\Debug\Instrument Model.pdb
+G:\ME\Learnning\3- VB.NET\Programs\Advenced Programs\Database TP\Instrument Model [SOFTWAVE]\v3\Instrument Model\bin\Debug\Instrument Model.xml
+G:\ME\Learnning\3- VB.NET\Programs\Advenced Programs\Database TP\Instrument Model [SOFTWAVE]\v3\Instrument Model\obj\Debug\InstrumentModel.vbprojResolveAssemblyReference.cache
+G:\ME\Learnning\3- VB.NET\Programs\Advenced Programs\Database TP\Instrument Model [SOFTWAVE]\v3\Instrument Model\obj\Debug\Instrument_Model.FrmDrop.resources
+G:\ME\Learnning\3- VB.NET\Programs\Advenced Programs\Database TP\Instrument Model [SOFTWAVE]\v3\Instrument Model\obj\Debug\Instrument_Model.MainFrm.resources
+G:\ME\Learnning\3- VB.NET\Programs\Advenced Programs\Database TP\Instrument Model [SOFTWAVE]\v3\Instrument Model\obj\Debug\Instrument_Model.Resources.resources
+G:\ME\Learnning\3- VB.NET\Programs\Advenced Programs\Database TP\Instrument Model [SOFTWAVE]\v3\Instrument Model\obj\Debug\InstrumentModel.vbproj.GenerateResource.Cache
+G:\ME\Learnning\3- VB.NET\Programs\Advenced Programs\Database TP\Instrument Model [SOFTWAVE]\v3\Instrument Model\obj\Debug\Instrument Model.exe
+G:\ME\Learnning\3- VB.NET\Programs\Advenced Programs\Database TP\Instrument Model [SOFTWAVE]\v3\Instrument Model\obj\Debug\Instrument Model.xml
+G:\ME\Learnning\3- VB.NET\Programs\Advenced Programs\Database TP\Instrument Model [SOFTWAVE]\v3\Instrument Model\obj\Debug\Instrument Model.pdb
+G:\ME\Learnning\3- VB.NET\Programs\Advenced Programs\Database TP\Instrument Model [SOFTWAVE]\v3\Instrument Model\obj\Debug\Instrument_Model.FrmBackup.resources

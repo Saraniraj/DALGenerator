@@ -1,0 +1,5 @@
+F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\bin\Debug\BACKUPandRESTORE.exe.config
+F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.exe
+F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.xml
+F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.pdb
+F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\bin\Debug\DALGenerator.exe.config

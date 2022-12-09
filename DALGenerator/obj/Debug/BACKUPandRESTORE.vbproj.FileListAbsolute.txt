@@ -1,0 +1,67 @@
+D:\Tools\Dot.NET\BACKUP.RESTORE\v3\Support HR\bin\Debug\BACKUPandRESTORE.exe.config
+D:\Tools\Dot.NET\BACKUP.RESTORE\v3\Support HR\bin\Debug\BACKUPandRESTORE.exe
+D:\Tools\Dot.NET\BACKUP.RESTORE\v3\Support HR\bin\Debug\BACKUPandRESTORE.pdb
+D:\Tools\Dot.NET\BACKUP.RESTORE\v3\Support HR\bin\Debug\BACKUPandRESTORE.xml
+D:\Tools\Dot.NET\BACKUP.RESTORE\v3\Support HR\obj\Debug\BACKUPandRESTORE.FrmRestor.resources
+D:\Tools\Dot.NET\BACKUP.RESTORE\v3\Support HR\obj\Debug\BACKUPandRESTORE.FrmBackup.resources
+D:\Tools\Dot.NET\BACKUP.RESTORE\v3\Support HR\obj\Debug\BACKUPandRESTORE.FrmDrop.resources
+D:\Tools\Dot.NET\BACKUP.RESTORE\v3\Support HR\obj\Debug\BACKUPandRESTORE.MainFrm.resources
+D:\Tools\Dot.NET\BACKUP.RESTORE\v3\Support HR\obj\Debug\BACKUPandRESTORE.Resources.resources
+D:\Tools\Dot.NET\BACKUP.RESTORE\v3\Support HR\obj\Debug\BACKUPandRESTORE.vbproj.GenerateResource.Cache
+D:\Tools\Dot.NET\BACKUP.RESTORE\v3\Support HR\obj\Debug\BACKUPandRESTORE.exe
+D:\Tools\Dot.NET\BACKUP.RESTORE\v3\Support HR\obj\Debug\BACKUPandRESTORE.xml
+D:\Tools\Dot.NET\BACKUP.RESTORE\v3\Support HR\obj\Debug\BACKUPandRESTORE.pdb
+E:\MyFiles\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.exe.config
+E:\MyFiles\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.exe
+E:\MyFiles\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.xml
+E:\MyFiles\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.pdb
+E:\00- VB.NET Channel\00-Projects\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.exe.config
+E:\00- VB.NET Channel\00-Projects\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.exe
+E:\00- VB.NET Channel\00-Projects\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.xml
+E:\00- VB.NET Channel\00-Projects\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.pdb
+E:\00- VB.NET Channel\00-Projects\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.exe
+E:\00- VB.NET Channel\00-Projects\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.pdb
+E:\00- VB.NET Channel\00-Projects\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.xml
+E:\00- VB.NET Channel\00-Projects\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.FrmRestor.resources
+E:\00- VB.NET Channel\00-Projects\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.FrmBackup.resources
+E:\00- VB.NET Channel\00-Projects\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.FrmDrop.resources
+E:\00- VB.NET Channel\00-Projects\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.MainFrm.resources
+E:\00- VB.NET Channel\00-Projects\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.Resources.resources
+E:\00- VB.NET Channel\00-Projects\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.vbproj.GenerateResource.Cache
+G:\Coding Trail\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.exe.config
+G:\Coding Trail\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.exe
+G:\Coding Trail\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.xml
+G:\Coding Trail\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.pdb
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.exe.config
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.exe
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.xml
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.pdb
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.exe
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.pdb
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.xml
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.vbprojResolveAssemblyReference.cache
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.FrmRestor.resources
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.FrmBackup.resources
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.FrmDrop.resources
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.MainFrm.resources
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.Resources.resources
+I:\Projects\Github\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.vbproj.GenerateResource.Cache
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.exe.config
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.exe
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.xml
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.pdb
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.vbprojResolveAssemblyReference.cache
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.FrmRestor.resources
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.FrmBackup.resources
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.FrmDrop.resources
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.MainFrm.resources
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.FormMessageBox.resources
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.Resources.resources
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.frmSample1.resources
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.frmSampleReport_DgvAzure.resources
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.vbproj.GenerateResource.Cache
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.exe
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.pdb
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\bin\Debug\BACKUPandRESTORE.xml
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.FrmCodeGenerate.resources
+F:\Ls Spinning Mills\Source\2023\BACKUPandRESTORE\BACKUPandRESTORE\BACKUPandRESTORE\obj\Debug\BACKUPandRESTORE.Frm_DALGenerate.resources
