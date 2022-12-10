@@ -34,6 +34,9 @@ Partial Class Frm_DALGenerate
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TabPageConnection = New System.Windows.Forms.TabPage()
+        Me.BtnGenerate = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.cbxtype = New System.Windows.Forms.ComboBox()
         Me.Cbxtablename = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TXTServername = New System.Windows.Forms.ComboBox()
@@ -46,12 +49,17 @@ Partial Class Frm_DALGenerate
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Rtbox = New System.Windows.Forms.RichTextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.cbxtype = New System.Windows.Forms.ComboBox()
-        Me.BtnGenerate = New System.Windows.Forms.Button()
+        Me.tsToolStrip = New System.Windows.Forms.ToolStrip()
+        Me.btnCreate = New System.Windows.Forms.ToolStripButton()
+        Me.btnDelete = New System.Windows.Forms.ToolStripButton()
+        Me.btnRename = New System.Windows.Forms.ToolStripButton()
+        Me.btnSearch = New System.Windows.Forms.ToolStripButton()
+        Me.btnImport = New System.Windows.Forms.ToolStripButton()
+        Me.btnSweep = New System.Windows.Forms.ToolStripButton()
         Me.TabPageDatabases.SuspendLayout()
         Me.TabPageConnection.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.tsToolStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'ButtonDrop
@@ -184,6 +192,35 @@ Partial Class Frm_DALGenerate
         Me.TabPageConnection.TabIndex = 0
         Me.TabPageConnection.Text = "Connection"
         '
+        'BtnGenerate
+        '
+        Me.BtnGenerate.Location = New System.Drawing.Point(410, 80)
+        Me.BtnGenerate.Name = "BtnGenerate"
+        Me.BtnGenerate.Size = New System.Drawing.Size(75, 23)
+        Me.BtnGenerate.TabIndex = 20
+        Me.BtnGenerate.Text = "Generate"
+        Me.BtnGenerate.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label5.ForeColor = System.Drawing.Color.CornflowerBlue
+        Me.Label5.Location = New System.Drawing.Point(8, 81)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(45, 19)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "Type"
+        '
+        'cbxtype
+        '
+        Me.cbxtype.FormattingEnabled = True
+        Me.cbxtype.Items.AddRange(New Object() {"Main", "Line", "Get", "Class"})
+        Me.cbxtype.Location = New System.Drawing.Point(157, 81)
+        Me.cbxtype.Name = "cbxtype"
+        Me.cbxtype.Size = New System.Drawing.Size(156, 24)
+        Me.cbxtype.TabIndex = 18
+        '
         'Cbxtablename
         '
         Me.Cbxtablename.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
@@ -299,7 +336,7 @@ Partial Class Frm_DALGenerate
         '
         Me.TabControl1.Controls.Add(Me.TabPageConnection)
         Me.TabControl1.Controls.Add(Me.TabPageDatabases)
-        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 25)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(882, 148)
@@ -313,39 +350,78 @@ Partial Class Frm_DALGenerate
         Me.Rtbox.TabIndex = 2
         Me.Rtbox.Text = ""
         '
-        'Label5
+        'tsToolStrip
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label5.ForeColor = System.Drawing.Color.CornflowerBlue
-        Me.Label5.Location = New System.Drawing.Point(8, 81)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(45, 19)
-        Me.Label5.TabIndex = 19
-        Me.Label5.Text = "Type"
+        Me.tsToolStrip.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tsToolStrip.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tsToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.tsToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnCreate, Me.btnDelete, Me.btnRename, Me.btnSearch, Me.btnImport, Me.btnSweep})
+        Me.tsToolStrip.Location = New System.Drawing.Point(0, 0)
+        Me.tsToolStrip.Name = "tsToolStrip"
+        Me.tsToolStrip.Padding = New System.Windows.Forms.Padding(5, 0, 1, 0)
+        Me.tsToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
+        Me.tsToolStrip.Size = New System.Drawing.Size(880, 25)
+        Me.tsToolStrip.TabIndex = 6
         '
-        'cbxtype
+        'btnCreate
         '
-        Me.cbxtype.FormattingEnabled = True
-        Me.cbxtype.Items.AddRange(New Object() {"Main", "Line", "Get", "Class"})
-        Me.cbxtype.Location = New System.Drawing.Point(157, 81)
-        Me.cbxtype.Name = "cbxtype"
-        Me.cbxtype.Size = New System.Drawing.Size(156, 24)
-        Me.cbxtype.TabIndex = 18
+        Me.btnCreate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnCreate.Image = CType(resources.GetObject("btnCreate.Image"), System.Drawing.Image)
+        Me.btnCreate.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnCreate.Name = "btnCreate"
+        Me.btnCreate.Size = New System.Drawing.Size(23, 22)
+        Me.btnCreate.Text = "Create Category"
         '
-        'BtnGenerate
+        'btnDelete
         '
-        Me.BtnGenerate.Location = New System.Drawing.Point(410, 80)
-        Me.BtnGenerate.Name = "BtnGenerate"
-        Me.BtnGenerate.Size = New System.Drawing.Size(75, 23)
-        Me.BtnGenerate.TabIndex = 20
-        Me.BtnGenerate.Text = "Generate"
-        Me.BtnGenerate.UseVisualStyleBackColor = True
+        Me.btnDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnDelete.Image = CType(resources.GetObject("btnDelete.Image"), System.Drawing.Image)
+        Me.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(23, 22)
+        Me.btnDelete.Text = "Delete Category"
+        '
+        'btnRename
+        '
+        Me.btnRename.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnRename.Image = CType(resources.GetObject("btnRename.Image"), System.Drawing.Image)
+        Me.btnRename.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnRename.Name = "btnRename"
+        Me.btnRename.Size = New System.Drawing.Size(23, 22)
+        Me.btnRename.Text = "Rename Category"
+        '
+        'btnSearch
+        '
+        Me.btnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnSearch.Image = CType(resources.GetObject("btnSearch.Image"), System.Drawing.Image)
+        Me.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(23, 22)
+        Me.btnSearch.Text = "Search List"
+        '
+        'btnImport
+        '
+        Me.btnImport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnImport.Image = CType(resources.GetObject("btnImport.Image"), System.Drawing.Image)
+        Me.btnImport.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnImport.Name = "btnImport"
+        Me.btnImport.Size = New System.Drawing.Size(23, 22)
+        Me.btnImport.Text = "Import Categories"
+        '
+        'btnSweep
+        '
+        Me.btnSweep.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnSweep.Image = CType(resources.GetObject("btnSweep.Image"), System.Drawing.Image)
+        Me.btnSweep.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnSweep.Name = "btnSweep"
+        Me.btnSweep.Size = New System.Drawing.Size(23, 22)
+        Me.btnSweep.Text = "Delete Unused"
         '
         'Frm_DALGenerate
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(880, 719)
+        Me.Controls.Add(Me.tsToolStrip)
         Me.Controls.Add(Me.Rtbox)
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Tahoma", 9.75!)
@@ -362,7 +438,10 @@ Partial Class Frm_DALGenerate
         Me.TabPageConnection.ResumeLayout(False)
         Me.TabPageConnection.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
+        Me.tsToolStrip.ResumeLayout(False)
+        Me.tsToolStrip.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -391,4 +470,11 @@ Partial Class Frm_DALGenerate
     Friend WithEvents Label5 As Label
     Friend WithEvents cbxtype As ComboBox
     Friend WithEvents BtnGenerate As Button
+    Friend WithEvents tsToolStrip As ToolStrip
+    Friend WithEvents btnCreate As ToolStripButton
+    Friend WithEvents btnDelete As ToolStripButton
+    Friend WithEvents btnRename As ToolStripButton
+    Friend WithEvents btnSearch As ToolStripButton
+    Friend WithEvents btnImport As ToolStripButton
+    Friend WithEvents btnSweep As ToolStripButton
 End Class

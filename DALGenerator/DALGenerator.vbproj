@@ -79,6 +79,12 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="ClsConnections.vb" />
+    <Compile Include="Code Generate\Frm_PrefixSuffixaddsql.Designer.vb">
+      <DependentUpon>Frm_PrefixSuffixaddsql.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Code Generate\Frm_PrefixSuffixaddsql.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Code Generate\FrmCodeGenerate.designer.vb">
       <DependentUpon>FrmCodeGenerate.vb</DependentUpon>
     </Compile>
@@ -113,6 +119,18 @@
       <DependentUpon>MainFrm.vb</DependentUpon>
     </Compile>
     <Compile Include="MainFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mdi\MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mdi\MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messagebox\PowersoftMessage.Designer.vb">
+      <DependentUpon>PowersoftMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Messagebox\PowersoftMessage.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Messagebox\FormMessageBox.Designer.vb">
@@ -155,6 +173,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Code Generate\Frm_PrefixSuffixaddsql.resx">
+      <DependentUpon>Frm_PrefixSuffixaddsql.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Code Generate\FrmCodeGenerate.resx">
       <DependentUpon>FrmCodeGenerate.vb</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +193,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrm.resx">
       <DependentUpon>MainFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mdi\MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messagebox\PowersoftMessage.resx">
+      <DependentUpon>PowersoftMessage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Messagebox\FormMessageBox.resx">
       <DependentUpon>FormMessageBox.vb</DependentUpon>

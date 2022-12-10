@@ -925,4 +925,20 @@ Public Class Frm_DALGenerate
 
         End Try
     End Sub
+
+    Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
+        Try
+
+            Me.Hide()
+
+            Dim F As New Frm_PrefixSuffixaddsql()
+            F.ShowDialog()
+
+            Me.Show()
+
+        Catch ex As Exception
+            Show_Message(ex.Message)
+
+        End Try
+    End Sub
 End Class

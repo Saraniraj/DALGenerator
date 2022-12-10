@@ -46,6 +46,8 @@ Module modVariables
     Public mservername As String
     Public mserveruname As String
     Public mserverPassword As String
+    Public m_clrMyGreen As Color = Color.FromArgb(239, 254, 218)
+    Public m_clrMyRed As Color = Color.FromArgb(254, 216, 222)
 
     Public Declare Unicode Function GetPrivateProfileString Lib "kernel32" Alias "GetPrivateProfileStringW" _
         (ByVal lpApplicationName As String, ByVal lpKeyName As String, ByVal lpDefault As String,

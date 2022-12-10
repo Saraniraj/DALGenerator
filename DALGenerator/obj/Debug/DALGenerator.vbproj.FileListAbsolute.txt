@@ -17,3 +17,6 @@ F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debu
 F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debug\DALGenerator.exe
 F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debug\DALGenerator.xml
 F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debug\DALGenerator.pdb
+F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.Frm_PrefixSuffixaddsql.resources
+F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.CheckbookMessage.resources
+F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.MainForm.resources
