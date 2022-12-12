@@ -26,47 +26,23 @@ Partial Class MainForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.mnuMenuStrip = New System.Windows.Forms.MenuStrip()
         Me.mnuFile = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuNew = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuOpen = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMyStatements = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCloseLedger = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuEdit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuDuplicateTrans = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuView = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuViewStatement = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuTools = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsToolMenuSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuHelp = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuNew = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuSaveAs = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuEdit = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuPrefixSuffixadd = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuDalGenerate = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuEditTrans = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuEditType = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuEditCategory = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuEditTransDate = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuEditPayment = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuEditDeposit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuEditPayee = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuEditStatement = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuRemoveReceipt = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuRemoveStatement = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuClearSelected = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuUnclearSelected = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.mnuEditStartingBalance = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuCategories = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuPayees = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuViewReceipt = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSpendingOverview = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuMonthlyIncome = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuBudgets = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuMostUsed = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuTools = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuSum = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuFilter = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuAdvancedFilter = New System.Windows.Forms.ToolStripMenuItem()
@@ -74,9 +50,12 @@ Partial Class MainForm
         Me.mnuImportTrans = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuExportTransactions = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuBalanceAccount = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsToolMenuSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.mnuLoanCalculator = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCalc = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.mnuCheckforUpdate = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuHelp = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCheckbookHelp = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuAbout = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmrFilterTimer = New System.Windows.Forms.Timer(Me.components)
@@ -84,6 +63,16 @@ Partial Class MainForm
         Me.DownloadUpdateProgressBar = New System.Windows.Forms.ToolStripProgressBar()
         Me.DownloadUpdateLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.stLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.mnuCategories = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuPayees = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuViewReceipt = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuSpendingOverview = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuMonthlyIncome = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuBudgets = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuMostUsed = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuEditPayment = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuEditDeposit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuEditType = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMenuStrip.SuspendLayout()
         Me.stStatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -91,8 +80,8 @@ Partial Class MainForm
         'mnuMenuStrip
         '
         Me.mnuMenuStrip.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.mnuMenuStrip.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mnuMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFile, Me.mnuEdit, Me.mnuView, Me.mnuTools, Me.mnuHelp})
+        Me.mnuMenuStrip.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mnuMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFile, Me.mnuEdit, Me.mnuTools, Me.mnuHelp})
         Me.mnuMenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.mnuMenuStrip.Name = "mnuMenuStrip"
         Me.mnuMenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -103,354 +92,219 @@ Partial Class MainForm
         '
         Me.mnuFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuNew, Me.mnuOpen, Me.mnuMyStatements, Me.mnuCloseLedger, Me.ToolStripSeparator1, Me.mnuSaveAs, Me.ToolStripSeparator2, Me.mnuExit})
         Me.mnuFile.Name = "mnuFile"
-        Me.mnuFile.Size = New System.Drawing.Size(35, 20)
+        Me.mnuFile.Size = New System.Drawing.Size(42, 20)
         Me.mnuFile.Text = "&File"
-        '
-        'mnuOpen
-        '
-        Me.mnuOpen.Name = "mnuOpen"
-        Me.mnuOpen.Size = New System.Drawing.Size(196, 22)
-        Me.mnuOpen.Text = "My Checkbook &Ledgers..."
-        '
-        'mnuMyStatements
-        '
-        Me.mnuMyStatements.Name = "mnuMyStatements"
-        Me.mnuMyStatements.Size = New System.Drawing.Size(196, 22)
-        Me.mnuMyStatements.Text = "My S&tatements..."
-        '
-        'mnuCloseLedger
-        '
-        Me.mnuCloseLedger.Name = "mnuCloseLedger"
-        Me.mnuCloseLedger.Size = New System.Drawing.Size(196, 22)
-        Me.mnuCloseLedger.Text = "&Close Ledger"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(193, 6)
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(193, 6)
-        '
-        'mnuEdit
-        '
-        Me.mnuEdit.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuPrefixSuffixadd, Me.mnuDalGenerate, Me.mnuEditTrans, Me.mnuDuplicateTrans, Me.mnuClearSelected, Me.mnuUnclearSelected, Me.ToolStripSeparator3, Me.mnuEditStartingBalance})
-        Me.mnuEdit.Name = "mnuEdit"
-        Me.mnuEdit.Size = New System.Drawing.Size(37, 20)
-        Me.mnuEdit.Text = "&Edit"
-        '
-        'mnuDuplicateTrans
-        '
-        Me.mnuDuplicateTrans.Name = "mnuDuplicateTrans"
-        Me.mnuDuplicateTrans.Size = New System.Drawing.Size(189, 22)
-        Me.mnuDuplicateTrans.Text = "Du&plicate Transaction(s)"
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(186, 6)
-        '
-        'mnuView
-        '
-        Me.mnuView.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCategories, Me.mnuPayees, Me.mnuViewReceipt, Me.mnuViewStatement, Me.ToolStripSeparator4, Me.mnuSpendingOverview, Me.mnuMonthlyIncome, Me.mnuBudgets, Me.mnuMostUsed})
-        Me.mnuView.Name = "mnuView"
-        Me.mnuView.Size = New System.Drawing.Size(42, 20)
-        Me.mnuView.Text = "&View"
-        '
-        'mnuViewStatement
-        '
-        Me.mnuViewStatement.Name = "mnuViewStatement"
-        Me.mnuViewStatement.Size = New System.Drawing.Size(227, 22)
-        Me.mnuViewStatement.Text = "View &Statement"
-        '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(224, 6)
-        '
-        'mnuTools
-        '
-        Me.mnuTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuSum, Me.mnuFilter, Me.mnuAdvancedFilter, Me.mnuOptions, Me.mnuImportTrans, Me.mnuExportTransactions, Me.mnuBalanceAccount, Me.tsToolMenuSeparator1, Me.mnuLoanCalculator, Me.mnuCalc, Me.ToolStripSeparator8, Me.mnuCheckforUpdate})
-        Me.mnuTools.Name = "mnuTools"
-        Me.mnuTools.Size = New System.Drawing.Size(45, 20)
-        Me.mnuTools.Text = "&Tools"
-        '
-        'tsToolMenuSeparator1
-        '
-        Me.tsToolMenuSeparator1.Name = "tsToolMenuSeparator1"
-        Me.tsToolMenuSeparator1.Size = New System.Drawing.Size(174, 6)
-        '
-        'ToolStripSeparator8
-        '
-        Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(174, 6)
-        '
-        'mnuHelp
-        '
-        Me.mnuHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCheckbookHelp, Me.mnuAbout})
-        Me.mnuHelp.Name = "mnuHelp"
-        Me.mnuHelp.Size = New System.Drawing.Size(41, 20)
-        Me.mnuHelp.Text = "&Help"
         '
         'mnuNew
         '
         Me.mnuNew.Image = CType(resources.GetObject("mnuNew.Image"), System.Drawing.Image)
         Me.mnuNew.Name = "mnuNew"
-        Me.mnuNew.Size = New System.Drawing.Size(196, 22)
-        Me.mnuNew.Text = "&New Ledger..."
+        Me.mnuNew.Size = New System.Drawing.Size(228, 22)
+        Me.mnuNew.Text = "&DAL Generate"
+        '
+        'mnuOpen
+        '
+        Me.mnuOpen.Name = "mnuOpen"
+        Me.mnuOpen.Size = New System.Drawing.Size(228, 22)
+        Me.mnuOpen.Text = "My Checkbook &Ledgers..."
+        '
+        'mnuMyStatements
+        '
+        Me.mnuMyStatements.Name = "mnuMyStatements"
+        Me.mnuMyStatements.Size = New System.Drawing.Size(228, 22)
+        Me.mnuMyStatements.Text = "My S&tatements..."
+        '
+        'mnuCloseLedger
+        '
+        Me.mnuCloseLedger.Name = "mnuCloseLedger"
+        Me.mnuCloseLedger.Size = New System.Drawing.Size(228, 22)
+        Me.mnuCloseLedger.Text = "&Close Ledger"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(225, 6)
         '
         'mnuSaveAs
         '
         Me.mnuSaveAs.Image = CType(resources.GetObject("mnuSaveAs.Image"), System.Drawing.Image)
         Me.mnuSaveAs.Name = "mnuSaveAs"
-        Me.mnuSaveAs.Size = New System.Drawing.Size(196, 22)
+        Me.mnuSaveAs.Size = New System.Drawing.Size(228, 22)
         Me.mnuSaveAs.Text = "&Save As..."
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(225, 6)
         '
         'mnuExit
         '
         Me.mnuExit.Image = CType(resources.GetObject("mnuExit.Image"), System.Drawing.Image)
         Me.mnuExit.Name = "mnuExit"
-        Me.mnuExit.Size = New System.Drawing.Size(196, 22)
+        Me.mnuExit.Size = New System.Drawing.Size(228, 22)
         Me.mnuExit.Text = "E&xit"
+        '
+        'mnuEdit
+        '
+        Me.mnuEdit.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuEditTrans, Me.mnuPrefixSuffixadd, Me.mnuDalGenerate, Me.mnuEditPayment, Me.mnuCategories, Me.mnuViewReceipt, Me.mnuPayees, Me.mnuEditType, Me.mnuEditDeposit, Me.mnuSpendingOverview, Me.mnuMonthlyIncome, Me.mnuBudgets, Me.mnuMostUsed, Me.mnuClearSelected, Me.mnuUnclearSelected, Me.ToolStripSeparator3, Me.mnuEditStartingBalance})
+        Me.mnuEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mnuEdit.Name = "mnuEdit"
+        Me.mnuEdit.Size = New System.Drawing.Size(46, 20)
+        Me.mnuEdit.Text = "&DAL"
         '
         'mnuPrefixSuffixadd
         '
         Me.mnuPrefixSuffixadd.Image = CType(resources.GetObject("mnuPrefixSuffixadd.Image"), System.Drawing.Image)
         Me.mnuPrefixSuffixadd.Name = "mnuPrefixSuffixadd"
-        Me.mnuPrefixSuffixadd.Size = New System.Drawing.Size(189, 22)
+        Me.mnuPrefixSuffixadd.Size = New System.Drawing.Size(270, 22)
         Me.mnuPrefixSuffixadd.Text = "&Prefix Suffix Add"
         '
         'mnuDalGenerate
         '
         Me.mnuDalGenerate.Image = CType(resources.GetObject("mnuDalGenerate.Image"), System.Drawing.Image)
         Me.mnuDalGenerate.Name = "mnuDalGenerate"
-        Me.mnuDalGenerate.Size = New System.Drawing.Size(189, 22)
+        Me.mnuDalGenerate.Size = New System.Drawing.Size(270, 22)
         Me.mnuDalGenerate.Text = "&DAL Generator"
         '
         'mnuEditTrans
         '
-        Me.mnuEditTrans.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuEditType, Me.mnuEditCategory, Me.mnuEditTransDate, Me.mnuEditPayment, Me.mnuEditDeposit, Me.mnuEditPayee, Me.mnuEditStatement, Me.ToolStripSeparator6, Me.mnuRemoveReceipt, Me.mnuRemoveStatement})
         Me.mnuEditTrans.Image = CType(resources.GetObject("mnuEditTrans.Image"), System.Drawing.Image)
         Me.mnuEditTrans.Name = "mnuEditTrans"
-        Me.mnuEditTrans.Size = New System.Drawing.Size(189, 22)
-        Me.mnuEditTrans.Text = "&Edit Transaction(s)..."
-        '
-        'mnuEditType
-        '
-        Me.mnuEditType.Image = CType(resources.GetObject("mnuEditType.Image"), System.Drawing.Image)
-        Me.mnuEditType.Name = "mnuEditType"
-        Me.mnuEditType.Size = New System.Drawing.Size(165, 22)
-        Me.mnuEditType.Text = "&Type..."
-        '
-        'mnuEditCategory
-        '
-        Me.mnuEditCategory.Name = "mnuEditCategory"
-        Me.mnuEditCategory.Size = New System.Drawing.Size(165, 22)
-        Me.mnuEditCategory.Text = "&Category..."
-        '
-        'mnuEditTransDate
-        '
-        Me.mnuEditTransDate.Name = "mnuEditTransDate"
-        Me.mnuEditTransDate.Size = New System.Drawing.Size(165, 22)
-        Me.mnuEditTransDate.Text = "&Date..."
-        '
-        'mnuEditPayment
-        '
-        Me.mnuEditPayment.Image = CType(resources.GetObject("mnuEditPayment.Image"), System.Drawing.Image)
-        Me.mnuEditPayment.Name = "mnuEditPayment"
-        Me.mnuEditPayment.Size = New System.Drawing.Size(165, 22)
-        Me.mnuEditPayment.Text = "Pa&yment..."
-        '
-        'mnuEditDeposit
-        '
-        Me.mnuEditDeposit.Image = CType(resources.GetObject("mnuEditDeposit.Image"), System.Drawing.Image)
-        Me.mnuEditDeposit.Name = "mnuEditDeposit"
-        Me.mnuEditDeposit.Size = New System.Drawing.Size(165, 22)
-        Me.mnuEditDeposit.Text = "&Deposit..."
-        '
-        'mnuEditPayee
-        '
-        Me.mnuEditPayee.Name = "mnuEditPayee"
-        Me.mnuEditPayee.Size = New System.Drawing.Size(165, 22)
-        Me.mnuEditPayee.Text = "&Payee..."
-        '
-        'mnuEditStatement
-        '
-        Me.mnuEditStatement.Name = "mnuEditStatement"
-        Me.mnuEditStatement.Size = New System.Drawing.Size(165, 22)
-        Me.mnuEditStatement.Text = "&Statement..."
-        '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(162, 6)
-        '
-        'mnuRemoveReceipt
-        '
-        Me.mnuRemoveReceipt.Name = "mnuRemoveReceipt"
-        Me.mnuRemoveReceipt.Size = New System.Drawing.Size(165, 22)
-        Me.mnuRemoveReceipt.Text = "Remove &Receipt"
-        '
-        'mnuRemoveStatement
-        '
-        Me.mnuRemoveStatement.Name = "mnuRemoveStatement"
-        Me.mnuRemoveStatement.Size = New System.Drawing.Size(165, 22)
-        Me.mnuRemoveStatement.Text = "Remove St&atement"
+        Me.mnuEditTrans.Size = New System.Drawing.Size(270, 22)
+        Me.mnuEditTrans.Text = "&Fill Grid Title"
         '
         'mnuClearSelected
         '
         Me.mnuClearSelected.Image = CType(resources.GetObject("mnuClearSelected.Image"), System.Drawing.Image)
         Me.mnuClearSelected.Name = "mnuClearSelected"
-        Me.mnuClearSelected.Size = New System.Drawing.Size(189, 22)
+        Me.mnuClearSelected.Size = New System.Drawing.Size(270, 22)
         Me.mnuClearSelected.Text = "&Clear"
         '
         'mnuUnclearSelected
         '
         Me.mnuUnclearSelected.Image = CType(resources.GetObject("mnuUnclearSelected.Image"), System.Drawing.Image)
         Me.mnuUnclearSelected.Name = "mnuUnclearSelected"
-        Me.mnuUnclearSelected.Size = New System.Drawing.Size(189, 22)
+        Me.mnuUnclearSelected.Size = New System.Drawing.Size(270, 22)
         Me.mnuUnclearSelected.Text = "&Unclear"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(267, 6)
         '
         'mnuEditStartingBalance
         '
         Me.mnuEditStartingBalance.Image = CType(resources.GetObject("mnuEditStartingBalance.Image"), System.Drawing.Image)
         Me.mnuEditStartingBalance.Name = "mnuEditStartingBalance"
-        Me.mnuEditStartingBalance.Size = New System.Drawing.Size(189, 22)
+        Me.mnuEditStartingBalance.Size = New System.Drawing.Size(270, 22)
         Me.mnuEditStartingBalance.Text = "Edit &Starting Balance..."
         '
-        'mnuCategories
+        'mnuTools
         '
-        Me.mnuCategories.Image = CType(resources.GetObject("mnuCategories.Image"), System.Drawing.Image)
-        Me.mnuCategories.Name = "mnuCategories"
-        Me.mnuCategories.Size = New System.Drawing.Size(227, 22)
-        Me.mnuCategories.Text = "&Categories..."
-        '
-        'mnuPayees
-        '
-        Me.mnuPayees.Image = CType(resources.GetObject("mnuPayees.Image"), System.Drawing.Image)
-        Me.mnuPayees.Name = "mnuPayees"
-        Me.mnuPayees.Size = New System.Drawing.Size(227, 22)
-        Me.mnuPayees.Text = "&Payees..."
-        '
-        'mnuViewReceipt
-        '
-        Me.mnuViewReceipt.Image = CType(resources.GetObject("mnuViewReceipt.Image"), System.Drawing.Image)
-        Me.mnuViewReceipt.Name = "mnuViewReceipt"
-        Me.mnuViewReceipt.Size = New System.Drawing.Size(227, 22)
-        Me.mnuViewReceipt.Text = "View &Receipt"
-        '
-        'mnuSpendingOverview
-        '
-        Me.mnuSpendingOverview.Image = CType(resources.GetObject("mnuSpendingOverview.Image"), System.Drawing.Image)
-        Me.mnuSpendingOverview.Name = "mnuSpendingOverview"
-        Me.mnuSpendingOverview.Size = New System.Drawing.Size(227, 22)
-        Me.mnuSpendingOverview.Text = "Spending &Overview..."
-        '
-        'mnuMonthlyIncome
-        '
-        Me.mnuMonthlyIncome.Image = CType(resources.GetObject("mnuMonthlyIncome.Image"), System.Drawing.Image)
-        Me.mnuMonthlyIncome.Name = "mnuMonthlyIncome"
-        Me.mnuMonthlyIncome.Size = New System.Drawing.Size(227, 22)
-        Me.mnuMonthlyIncome.Text = "Monthly &Income..."
-        '
-        'mnuBudgets
-        '
-        Me.mnuBudgets.Image = CType(resources.GetObject("mnuBudgets.Image"), System.Drawing.Image)
-        Me.mnuBudgets.Name = "mnuBudgets"
-        Me.mnuBudgets.Size = New System.Drawing.Size(227, 22)
-        Me.mnuBudgets.Text = "&Budgets..."
-        '
-        'mnuMostUsed
-        '
-        Me.mnuMostUsed.Image = CType(resources.GetObject("mnuMostUsed.Image"), System.Drawing.Image)
-        Me.mnuMostUsed.Name = "mnuMostUsed"
-        Me.mnuMostUsed.Size = New System.Drawing.Size(227, 22)
-        Me.mnuMostUsed.Text = "&Most Used Categories/Payees..."
+        Me.mnuTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuSum, Me.mnuFilter, Me.mnuAdvancedFilter, Me.mnuOptions, Me.mnuImportTrans, Me.mnuExportTransactions, Me.mnuBalanceAccount, Me.tsToolMenuSeparator1, Me.mnuLoanCalculator, Me.mnuCalc, Me.ToolStripSeparator8, Me.mnuCheckforUpdate})
+        Me.mnuTools.Name = "mnuTools"
+        Me.mnuTools.Size = New System.Drawing.Size(55, 20)
+        Me.mnuTools.Text = "&Tools"
         '
         'mnuSum
         '
         Me.mnuSum.Image = CType(resources.GetObject("mnuSum.Image"), System.Drawing.Image)
         Me.mnuSum.Name = "mnuSum"
-        Me.mnuSum.Size = New System.Drawing.Size(177, 22)
+        Me.mnuSum.Size = New System.Drawing.Size(204, 22)
         Me.mnuSum.Text = "&Sum Selected"
         '
         'mnuFilter
         '
         Me.mnuFilter.Image = CType(resources.GetObject("mnuFilter.Image"), System.Drawing.Image)
         Me.mnuFilter.Name = "mnuFilter"
-        Me.mnuFilter.Size = New System.Drawing.Size(177, 22)
+        Me.mnuFilter.Size = New System.Drawing.Size(204, 22)
         Me.mnuFilter.Text = "&Quick Filter"
         '
         'mnuAdvancedFilter
         '
         Me.mnuAdvancedFilter.Image = CType(resources.GetObject("mnuAdvancedFilter.Image"), System.Drawing.Image)
         Me.mnuAdvancedFilter.Name = "mnuAdvancedFilter"
-        Me.mnuAdvancedFilter.Size = New System.Drawing.Size(177, 22)
+        Me.mnuAdvancedFilter.Size = New System.Drawing.Size(204, 22)
         Me.mnuAdvancedFilter.Text = "&Advanced Filter..."
         '
         'mnuOptions
         '
         Me.mnuOptions.Image = CType(resources.GetObject("mnuOptions.Image"), System.Drawing.Image)
         Me.mnuOptions.Name = "mnuOptions"
-        Me.mnuOptions.Size = New System.Drawing.Size(177, 22)
+        Me.mnuOptions.Size = New System.Drawing.Size(204, 22)
         Me.mnuOptions.Text = "&Options..."
         '
         'mnuImportTrans
         '
         Me.mnuImportTrans.Image = CType(resources.GetObject("mnuImportTrans.Image"), System.Drawing.Image)
         Me.mnuImportTrans.Name = "mnuImportTrans"
-        Me.mnuImportTrans.Size = New System.Drawing.Size(177, 22)
+        Me.mnuImportTrans.Size = New System.Drawing.Size(204, 22)
         Me.mnuImportTrans.Text = "&Import Transactions..."
         '
         'mnuExportTransactions
         '
         Me.mnuExportTransactions.Image = CType(resources.GetObject("mnuExportTransactions.Image"), System.Drawing.Image)
         Me.mnuExportTransactions.Name = "mnuExportTransactions"
-        Me.mnuExportTransactions.Size = New System.Drawing.Size(177, 22)
+        Me.mnuExportTransactions.Size = New System.Drawing.Size(204, 22)
         Me.mnuExportTransactions.Text = "&Export Transactions..."
         '
         'mnuBalanceAccount
         '
         Me.mnuBalanceAccount.Image = CType(resources.GetObject("mnuBalanceAccount.Image"), System.Drawing.Image)
         Me.mnuBalanceAccount.Name = "mnuBalanceAccount"
-        Me.mnuBalanceAccount.Size = New System.Drawing.Size(177, 22)
+        Me.mnuBalanceAccount.Size = New System.Drawing.Size(204, 22)
         Me.mnuBalanceAccount.Text = "&Balance Account"
+        '
+        'tsToolMenuSeparator1
+        '
+        Me.tsToolMenuSeparator1.Name = "tsToolMenuSeparator1"
+        Me.tsToolMenuSeparator1.Size = New System.Drawing.Size(201, 6)
         '
         'mnuLoanCalculator
         '
         Me.mnuLoanCalculator.Image = CType(resources.GetObject("mnuLoanCalculator.Image"), System.Drawing.Image)
         Me.mnuLoanCalculator.Name = "mnuLoanCalculator"
-        Me.mnuLoanCalculator.Size = New System.Drawing.Size(177, 22)
+        Me.mnuLoanCalculator.Size = New System.Drawing.Size(204, 22)
         Me.mnuLoanCalculator.Text = "&Loan Calculator..."
         '
         'mnuCalc
         '
         Me.mnuCalc.Image = CType(resources.GetObject("mnuCalc.Image"), System.Drawing.Image)
         Me.mnuCalc.Name = "mnuCalc"
-        Me.mnuCalc.Size = New System.Drawing.Size(177, 22)
+        Me.mnuCalc.Size = New System.Drawing.Size(204, 22)
         Me.mnuCalc.Text = "&Windows Calculator"
+        '
+        'ToolStripSeparator8
+        '
+        Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(201, 6)
         '
         'mnuCheckforUpdate
         '
         Me.mnuCheckforUpdate.Image = CType(resources.GetObject("mnuCheckforUpdate.Image"), System.Drawing.Image)
         Me.mnuCheckforUpdate.Name = "mnuCheckforUpdate"
-        Me.mnuCheckforUpdate.Size = New System.Drawing.Size(177, 22)
+        Me.mnuCheckforUpdate.Size = New System.Drawing.Size(204, 22)
         Me.mnuCheckforUpdate.Text = "&Check for Update"
+        '
+        'mnuHelp
+        '
+        Me.mnuHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCheckbookHelp, Me.mnuAbout})
+        Me.mnuHelp.Name = "mnuHelp"
+        Me.mnuHelp.Size = New System.Drawing.Size(49, 20)
+        Me.mnuHelp.Text = "&Help"
         '
         'mnuCheckbookHelp
         '
         Me.mnuCheckbookHelp.Image = CType(resources.GetObject("mnuCheckbookHelp.Image"), System.Drawing.Image)
         Me.mnuCheckbookHelp.Name = "mnuCheckbookHelp"
-        Me.mnuCheckbookHelp.Size = New System.Drawing.Size(160, 22)
+        Me.mnuCheckbookHelp.Size = New System.Drawing.Size(183, 22)
         Me.mnuCheckbookHelp.Text = "Checkbook &Help"
         '
         'mnuAbout
         '
         Me.mnuAbout.Image = CType(resources.GetObject("mnuAbout.Image"), System.Drawing.Image)
         Me.mnuAbout.Name = "mnuAbout"
-        Me.mnuAbout.Size = New System.Drawing.Size(160, 22)
+        Me.mnuAbout.Size = New System.Drawing.Size(183, 22)
         Me.mnuAbout.Text = "&About Checkbook"
         '
         'tmrFilterTimer
@@ -486,6 +340,76 @@ Partial Class MainForm
         Me.stLabel.Size = New System.Drawing.Size(91, 17)
         Me.stLabel.Text = "Transaction Info"
         '
+        'mnuCategories
+        '
+        Me.mnuCategories.Image = CType(resources.GetObject("mnuCategories.Image"), System.Drawing.Image)
+        Me.mnuCategories.Name = "mnuCategories"
+        Me.mnuCategories.Size = New System.Drawing.Size(270, 22)
+        Me.mnuCategories.Text = "&Categories..."
+        '
+        'mnuPayees
+        '
+        Me.mnuPayees.Image = CType(resources.GetObject("mnuPayees.Image"), System.Drawing.Image)
+        Me.mnuPayees.Name = "mnuPayees"
+        Me.mnuPayees.Size = New System.Drawing.Size(270, 22)
+        Me.mnuPayees.Text = "&Payees..."
+        '
+        'mnuViewReceipt
+        '
+        Me.mnuViewReceipt.Image = CType(resources.GetObject("mnuViewReceipt.Image"), System.Drawing.Image)
+        Me.mnuViewReceipt.Name = "mnuViewReceipt"
+        Me.mnuViewReceipt.Size = New System.Drawing.Size(270, 22)
+        Me.mnuViewReceipt.Text = "View &Receipt"
+        '
+        'mnuSpendingOverview
+        '
+        Me.mnuSpendingOverview.Image = CType(resources.GetObject("mnuSpendingOverview.Image"), System.Drawing.Image)
+        Me.mnuSpendingOverview.Name = "mnuSpendingOverview"
+        Me.mnuSpendingOverview.Size = New System.Drawing.Size(270, 22)
+        Me.mnuSpendingOverview.Text = "Spending &Overview..."
+        '
+        'mnuMonthlyIncome
+        '
+        Me.mnuMonthlyIncome.Image = CType(resources.GetObject("mnuMonthlyIncome.Image"), System.Drawing.Image)
+        Me.mnuMonthlyIncome.Name = "mnuMonthlyIncome"
+        Me.mnuMonthlyIncome.Size = New System.Drawing.Size(270, 22)
+        Me.mnuMonthlyIncome.Text = "Monthly &Income..."
+        '
+        'mnuBudgets
+        '
+        Me.mnuBudgets.Image = CType(resources.GetObject("mnuBudgets.Image"), System.Drawing.Image)
+        Me.mnuBudgets.Name = "mnuBudgets"
+        Me.mnuBudgets.Size = New System.Drawing.Size(270, 22)
+        Me.mnuBudgets.Text = "&Budgets..."
+        '
+        'mnuMostUsed
+        '
+        Me.mnuMostUsed.Image = CType(resources.GetObject("mnuMostUsed.Image"), System.Drawing.Image)
+        Me.mnuMostUsed.Name = "mnuMostUsed"
+        Me.mnuMostUsed.Size = New System.Drawing.Size(270, 22)
+        Me.mnuMostUsed.Text = "&Most Used Categories/Payees..."
+        '
+        'mnuEditPayment
+        '
+        Me.mnuEditPayment.Image = CType(resources.GetObject("mnuEditPayment.Image"), System.Drawing.Image)
+        Me.mnuEditPayment.Name = "mnuEditPayment"
+        Me.mnuEditPayment.Size = New System.Drawing.Size(270, 22)
+        Me.mnuEditPayment.Text = "Pa&yment..."
+        '
+        'mnuEditDeposit
+        '
+        Me.mnuEditDeposit.Image = CType(resources.GetObject("mnuEditDeposit.Image"), System.Drawing.Image)
+        Me.mnuEditDeposit.Name = "mnuEditDeposit"
+        Me.mnuEditDeposit.Size = New System.Drawing.Size(270, 22)
+        Me.mnuEditDeposit.Text = "&Deposit..."
+        '
+        'mnuEditType
+        '
+        Me.mnuEditType.Image = CType(resources.GetObject("mnuEditType.Image"), System.Drawing.Image)
+        Me.mnuEditType.Name = "mnuEditType"
+        Me.mnuEditType.Size = New System.Drawing.Size(270, 22)
+        Me.mnuEditType.Text = "&Type..."
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -494,12 +418,14 @@ Partial Class MainForm
         Me.ClientSize = New System.Drawing.Size(984, 711)
         Me.Controls.Add(Me.stStatusStrip)
         Me.Controls.Add(Me.mnuMenuStrip)
+        Me.IsMdiContainer = True
         Me.KeyPreview = True
         Me.MinimumSize = New System.Drawing.Size(1000, 667)
         Me.Name = "MainForm"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dal Generator"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.mnuMenuStrip.ResumeLayout(False)
         Me.mnuMenuStrip.PerformLayout()
         Me.stStatusStrip.ResumeLayout(False)
@@ -523,31 +449,10 @@ Partial Class MainForm
     Friend WithEvents mnuPrefixSuffixadd As ToolStripMenuItem
     Friend WithEvents mnuDalGenerate As ToolStripMenuItem
     Friend WithEvents mnuEditTrans As ToolStripMenuItem
-    Friend WithEvents mnuEditType As ToolStripMenuItem
-    Friend WithEvents mnuEditCategory As ToolStripMenuItem
-    Friend WithEvents mnuEditTransDate As ToolStripMenuItem
-    Friend WithEvents mnuEditPayment As ToolStripMenuItem
-    Friend WithEvents mnuEditDeposit As ToolStripMenuItem
-    Friend WithEvents mnuEditPayee As ToolStripMenuItem
-    Friend WithEvents mnuEditStatement As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
-    Friend WithEvents mnuRemoveReceipt As ToolStripMenuItem
-    Friend WithEvents mnuRemoveStatement As ToolStripMenuItem
-    Friend WithEvents mnuDuplicateTrans As ToolStripMenuItem
     Friend WithEvents mnuClearSelected As ToolStripMenuItem
     Friend WithEvents mnuUnclearSelected As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Friend WithEvents mnuEditStartingBalance As ToolStripMenuItem
-    Friend WithEvents mnuView As ToolStripMenuItem
-    Friend WithEvents mnuCategories As ToolStripMenuItem
-    Friend WithEvents mnuPayees As ToolStripMenuItem
-    Friend WithEvents mnuViewReceipt As ToolStripMenuItem
-    Friend WithEvents mnuViewStatement As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
-    Friend WithEvents mnuSpendingOverview As ToolStripMenuItem
-    Friend WithEvents mnuMonthlyIncome As ToolStripMenuItem
-    Friend WithEvents mnuBudgets As ToolStripMenuItem
-    Friend WithEvents mnuMostUsed As ToolStripMenuItem
     Friend WithEvents mnuTools As ToolStripMenuItem
     Friend WithEvents mnuSum As ToolStripMenuItem
     Friend WithEvents mnuFilter As ToolStripMenuItem
@@ -569,4 +474,14 @@ Partial Class MainForm
     Friend WithEvents DownloadUpdateProgressBar As ToolStripProgressBar
     Friend WithEvents DownloadUpdateLabel As ToolStripStatusLabel
     Friend WithEvents stLabel As ToolStripStatusLabel
+    Friend WithEvents mnuEditPayment As ToolStripMenuItem
+    Friend WithEvents mnuCategories As ToolStripMenuItem
+    Friend WithEvents mnuViewReceipt As ToolStripMenuItem
+    Friend WithEvents mnuPayees As ToolStripMenuItem
+    Friend WithEvents mnuEditType As ToolStripMenuItem
+    Friend WithEvents mnuEditDeposit As ToolStripMenuItem
+    Friend WithEvents mnuSpendingOverview As ToolStripMenuItem
+    Friend WithEvents mnuMonthlyIncome As ToolStripMenuItem
+    Friend WithEvents mnuBudgets As ToolStripMenuItem
+    Friend WithEvents mnuMostUsed As ToolStripMenuItem
 End Class

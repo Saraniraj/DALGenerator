@@ -2,6 +2,21 @@
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+    Private Sub LoadForm(ByVal frmName As Object, ByVal frmText As String)
+        'For Each currentForm As Form In Me.MdiChildren
+        '    If frmName.GetType Is currentForm.GetType Then
+        '        currentForm.Activate()
+        '        Return
+        '    End If
+        'Next
+        frmName.MdiParent = Me
+        If Trim(frmText) <> "" Then
+            frmName.Text = frmText
+        End If
+        frmName.BringToFront()
+        frmName.Show()
+        'frmDash.Close()
+    End Sub
     Public Sub CenterFormCenterScreen(ByVal _Object As Object)
 
         Dim currentArea = Screen.FromControl(_Object).WorkingArea
@@ -36,5 +51,38 @@
 
         System.Diagnostics.Process.Start("calc")
 
+    End Sub
+
+    Private Sub mnuPrefixSuffixadd_Click(sender As Object, e As EventArgs) Handles mnuPrefixSuffixadd.Click
+        Try
+
+            Dim frm As New Frm_PrefixSuffixaddsql
+            LoadForm(frm, "")
+
+        Catch ex As Exception
+            Show_Message("Error : " & ex.Message.ToString)
+        End Try
+    End Sub
+
+    Private Sub mnuDalGenerate_Click(sender As Object, e As EventArgs) Handles mnuDalGenerate.Click
+        Try
+
+            Dim frm As New Frm_DALGenerate
+            LoadForm(frm, "")
+
+        Catch ex As Exception
+            Show_Message("Error : " & ex.Message.ToString)
+        End Try
+    End Sub
+
+    Private Sub mnuEditTrans_Click(sender As Object, e As EventArgs) Handles mnuEditTrans.Click
+        Try
+
+            Dim frm As New Frm_Fillgridtitle
+            LoadForm(frm, "")
+
+        Catch ex As Exception
+            Show_Message("Error : " & ex.Message.ToString)
+        End Try
     End Sub
 End Class

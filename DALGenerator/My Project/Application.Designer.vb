@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.BACKUPandRESTORE.Frm_PrefixSuffixaddsql
+            Me.MainForm = Global.BACKUPandRESTORE.MainForm
         End Sub
     End Class
 End Namespace

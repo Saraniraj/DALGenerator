@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Frm_PrefixSuffixaddsql
+Partial Class Frm_Fillgridtitle
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,7 +23,7 @@ Partial Class Frm_PrefixSuffixaddsql
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_PrefixSuffixaddsql))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Fillgridtitle))
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -246,7 +246,7 @@ Partial Class Frm_PrefixSuffixaddsql
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "yt"
         '
-        'Frm_PrefixSuffixaddsql
+        'Frm_Fillgridtitle
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(980, 719)
@@ -258,10 +258,10 @@ Partial Class Frm_PrefixSuffixaddsql
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "Frm_PrefixSuffixaddsql"
+        Me.Name = "Frm_Fillgridtitle"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Prefix Suffix add"
+        Me.Text = "Fill Grid Title"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.tsToolStrip.ResumeLayout(False)

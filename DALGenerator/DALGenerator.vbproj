@@ -79,6 +79,12 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="ClsConnections.vb" />
+    <Compile Include="Code Generate\Frm_Fillgridtitle.Designer.vb">
+      <DependentUpon>Frm_Fillgridtitle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Code Generate\Frm_Fillgridtitle.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Code Generate\Frm_PrefixSuffixaddsql.Designer.vb">
       <DependentUpon>Frm_PrefixSuffixaddsql.vb</DependentUpon>
     </Compile>
@@ -173,6 +179,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Code Generate\Frm_Fillgridtitle.resx">
+      <DependentUpon>Frm_Fillgridtitle.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Code Generate\Frm_PrefixSuffixaddsql.resx">
       <DependentUpon>Frm_PrefixSuffixaddsql.vb</DependentUpon>
     </EmbeddedResource>
