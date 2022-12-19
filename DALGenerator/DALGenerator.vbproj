@@ -79,6 +79,12 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="ClsConnections.vb" />
+    <Compile Include="Code Generate\Frm_PreSuf_Middlesql.Designer.vb">
+      <DependentUpon>Frm_PreSuf_Middlesql.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Code Generate\Frm_PreSuf_Middlesql.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Code Generate\Frm_Fillgridtitle.Designer.vb">
       <DependentUpon>Frm_Fillgridtitle.vb</DependentUpon>
     </Compile>
@@ -179,6 +185,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Code Generate\Frm_PreSuf_Middlesql.resx">
+      <DependentUpon>Frm_PreSuf_Middlesql.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Code Generate\Frm_Fillgridtitle.resx">
       <DependentUpon>Frm_Fillgridtitle.vb</DependentUpon>
     </EmbeddedResource>

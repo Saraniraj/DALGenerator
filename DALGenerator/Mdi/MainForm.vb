@@ -85,4 +85,15 @@
             Show_Message("Error : " & ex.Message.ToString)
         End Try
     End Sub
+
+    Private Sub mnuEditPayment_Click(sender As Object, e As EventArgs) Handles mnuEditPayment.Click
+        Try
+
+            Dim frm As New Frm_PreSuf_Middlesql
+            LoadForm(frm, "")
+
+        Catch ex As Exception
+            Show_Message("Error : " & ex.Message.ToString)
+        End Try
+    End Sub
 End Class
