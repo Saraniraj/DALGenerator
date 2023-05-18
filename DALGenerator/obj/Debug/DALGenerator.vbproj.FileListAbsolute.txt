@@ -22,3 +22,27 @@ F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debu
 F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.MainForm.resources
 F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.Frm_Fillgridtitle.resources
 F:\Ls Spinning Mills\Source\2023\DALGenerator\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.Frm_PreSuf_Middlesql.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\bin\Debug\DALGenerator.exe.config
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\DALGenerator.exe
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\DALGenerator.xml
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\DALGenerator.pdb
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\bin\Debug\DALGenerator.exe
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\bin\Debug\DALGenerator.pdb
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\bin\Debug\DALGenerator.xml
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.Frm_PreSuf_Middlesql.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.Frm_Fillgridtitle.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.Frm_PrefixSuffixaddsql.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.FrmCodeGenerate.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.Frm_DALGenerate.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.FrmRestor.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.FrmBackup.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.FrmDrop.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.MainFrm.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.MainForm.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.CheckbookMessage.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.FormMessageBox.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.Resources.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.frmSample1.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.frmSampleReport_DgvAzure.resources
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\DALGenerator.vbproj.GenerateResource.Cache
+F:\GitHub\Dhakshan-Rajkumar\DALGenerator\DALGenerator\obj\Debug\DALGenerator.vbprojResolveAssemblyReference.cache

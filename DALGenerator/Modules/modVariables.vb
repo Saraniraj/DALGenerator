@@ -42,7 +42,7 @@ Module modVariables
     Public locindex As Integer
     Public mvarmenu As String
 
-    Public mvarDbasename = "eGeneral"
+    Public mvarDbasename As String
     Public mservername As String
     Public mserveruname As String
     Public mserverPassword As String
