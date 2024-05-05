@@ -18,13 +18,13 @@ Module modDBConnection
             mvarKeyName(1) = "UserName"
             mvarKeyName(2) = "Password"
             mvarKeyName(3) = "ServerName"
-            ReadINIFile(mvarINIPath, mvarINIFileSectionName, mvarKeyName, mvarKeyValues)
+            '    ReadINIFile(mvarINIPath, mvarINIFileSectionName, mvarKeyName, mvarKeyValues)
 
             mvarConnectionString = "Provider=sqloledb;"
-            mvarConnectionString &= "Data Source=" & mvarKeyValues(3) & ";"
+            mvarConnectionString &= "Data Source=" & mservername & ";"
             mvarConnectionString &= "Initial Catalog= " & mvarDatabaseName & ";"
-            mvarConnectionString &= "User ID= " & mvarKeyValues(1) & ";"
-            mvarConnectionString &= "Password= " & mvarKeyValues(2) & ";"
+            mvarConnectionString &= "User ID= " & mserveruname & ";"
+            mvarConnectionString &= "Password= " & mserverPassword & ";"
             mvarConnectionString += "Connection Timeout=3600 "
 
             Return mvarConnectionString

@@ -200,6 +200,11 @@ Public Class Frm_DALGenerate
             If IsBlankComboBox(Cbxtablename) Then Exit Sub
 
             mvarDbasename = CbxDataBase.Text
+            mvarDbasename = CbxDataBase.Text
+            mservername = TXTServername.Text
+            mserveruname = TXTUser.Text
+            mserverPassword = TXTPass.Text
+
             If cbxtype.Text = "Main" Then
                 Create_SQLMainScript()
             ElseIf cbxtype.Text = "Line" Then
@@ -306,7 +311,7 @@ Public Class Frm_DALGenerate
             ds = Nothing
             ds = New DataSet
             SSQL = ""
-            SSQL = " SELECT  'select @sqlstr= @sqlstr + '',''+ '''' + ltrim(rtrim(@'+column_name +'		   ' +' ))				+ ''''' as COl_Name "
+            SSQL = " SELECT  'select @sqlstr= @sqlstr + '',''+ '''''''' + ltrim(rtrim(@'+column_name +'		   ' +' ))				+ ''''''''' as COl_Name "
             SSQL &= "   FROM INFORMATION_SCHEMA.Columns"
             SSQL &= " where TABLE_NAME = '" & Cbxtablename.Text & "'"
             SSQL &= " and COLUMN_NAME not in ('Authorize','Delete_Mode','Created_By', 'Created_Date','Modified_By' ,'Modified_Date') "

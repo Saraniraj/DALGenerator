@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("BACKUP and RESTORE")>
+<Assembly: AssemblyTitle("DAL GENERATOR")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("KRK")>
 <Assembly: AssemblyProduct("BACKUP and RESTORE")>
-<Assembly: AssemblyCopyright("Copyright © Microsoft 2022")>
+<Assembly: AssemblyCopyright("Copyright © Microsoft 2024")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
