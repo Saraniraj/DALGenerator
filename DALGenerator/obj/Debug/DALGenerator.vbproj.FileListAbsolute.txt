@@ -94,3 +94,7 @@ F:\Projects\Github\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.Resource
 F:\Projects\Github\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.frmSample1.resources
 F:\Projects\Github\DALGenerator\DALGenerator\obj\Debug\BACKUPandRESTORE.frmSampleReport_DgvAzure.resources
 F:\Projects\Github\DALGenerator\DALGenerator\obj\Debug\DALGenerator.vbproj.GenerateResource.Cache
+F:\Projects\My PC Software Solution\DALGenerator\DALGenerator\bin\Debug\DALGenerator.exe.config
+F:\Projects\My PC Software Solution\DALGenerator\DALGenerator\obj\Debug\DALGenerator.exe
+F:\Projects\My PC Software Solution\DALGenerator\DALGenerator\obj\Debug\DALGenerator.xml
+F:\Projects\My PC Software Solution\DALGenerator\DALGenerator\obj\Debug\DALGenerator.pdb
